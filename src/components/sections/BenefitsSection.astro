@@ -1,0 +1,55 @@
+---
+import BenefitCard from '../ui/BenefitCard.astro'
+import type { Benefit } from '../../types/index'
+
+const benefits: Benefit[] = [
+  {
+    id: '1',
+    icon: 'verified_user',
+    title: 'Metodología Comprobada',
+    description: 'Técnica JKA reconocida mundialmente. Mejora tu enfoque y autocontrol con un método probado por décadas.',
+  },
+  {
+    id: '2',
+    icon: 'groups',
+    title: 'Atención Personalizada',
+    description: 'Grupos segmentados por edad y nivel para un progreso seguro, técnico y adaptado a cada etapa.',
+  },
+  {
+    id: '3',
+    icon: 'workspace_premium',
+    title: 'Certificación JKA',
+    description: 'Grados oficiales con validez internacional en cualquier dojo JKA del mundo. Respaldo de Japón.',
+  },
+  {
+    id: '4',
+    icon: 'shield_with_heart',
+    title: 'Formación Integral',
+    description: 'Más que defensa personal: disciplina, respeto y desarrollo humano sostenido a lo largo del tiempo.',
+  },
+]
+---
+
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+    <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-4 block">
+      ¿Por qué elegir Samurai JKA?
+    </span>
+    <h2 class="font-h-display text-5xl text-ink uppercase mb-4 tracking-tight">
+      Formación de Excelencia
+    </h2>
+    <p class="text-muted max-w-2xl mx-auto text-lg leading-relaxed">
+      No es solo deporte. Es un camino de vida basado en el respeto y la disciplina técnica.
+    </p>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    {benefits.map((benefit) => (
+      <BenefitCard
+        icon={benefit.icon}
+        title={benefit.title}
+        description={benefit.description}
+      />
+    ))}
+  </div>
+</section>

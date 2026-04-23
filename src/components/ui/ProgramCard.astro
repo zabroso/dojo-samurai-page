@@ -1,0 +1,91 @@
+---
+import type { Program } from '../../types/index'
+import { WHATSAPP_BASE } from '../../config'
+
+interface Props {
+  program: Program
+}
+
+const { program } = Astro.props
+const { ageRange, label, name, features, imageUrl, whatsappMessage, featured } = program
+
+const href = `${WHATSAPP_BASE}?text=${encodeURIComponent(whatsappMessage)}`
+---
+
+<div
+  class:list={[
+    'bg-white rounded-3xl overflow-hidden jka-transition border group flex flex-col',
+    featured
+      ? 'border-2 border-jka-red shadow-2xl scale-105 z-10 relative'
+      : 'border-border shadow-sm hover:shadow-2xl',
+  ]}
+>
+  {featured && (
+    <div class="absolute top-4 right-4 z-20">
+      <span class="bg-jka-red text-white text-[10px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest shadow-lg">
+        Más Popular
+      </span>
+    </div>
+  )}
+
+  <div class="h-64 overflow-hidden">
+    <img
+      src={imageUrl}
+      alt={`Programa de karate ${name}`}
+      class="w-full h-full object-cover group-hover:scale-110 jka-transition"
+      loading="lazy"
+    />
+  </div>
+
+  <div class:list={['p-10 flex-grow flex flex-col', featured && 'bg-white']}>
+    <div class="mb-6">
+      <div class="flex justify-between items-start mb-4">
+        <span
+          class:list={[
+            'px-3 py-1 text-[10px] font-extrabold uppercase tracking-widest rounded-full text-jka-red',
+            featured ? 'bg-jka-red/10' : 'bg-surface',
+          ]}
+        >
+          {ageRange}
+        </span>
+        <span class="text-jka-red font-bold text-[10px] uppercase tracking-wider">{label}</span>
+      </div>
+      <h3 class="font-h-display text-4xl text-ink">{name}</h3>
+    </div>
+
+    <ul class="text-muted text-sm space-y-3 mb-10 flex-grow">
+      {features.map((feature) => (
+        <li
+          class:list={[
+            'flex items-center gap-2',
+            featured && 'font-bold text-ink',
+          ]}
+        >
+          <span
+            class:list={[
+              'material-symbols-outlined text-lg',
+              featured ? 'text-jka-red' : 'text-green-500',
+            ]}
+          >
+            check_circle
+          </span>
+          {feature}
+        </li>
+      ))}
+    </ul>
+
+    <div class="space-y-3">
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        class="block w-full bg-jka-red text-white text-center py-4 rounded-xl font-bold hover:bg-jka-red-dark jka-transition shadow-xl text-sm uppercase tracking-wider"
+      >
+        Ver cupos disponibles
+      </a>
+      <p class="text-center text-[10px] text-muted uppercase font-bold tracking-widest">
+        Sin compromiso
+      </p>
+    </div>
+  </div>
+</div>

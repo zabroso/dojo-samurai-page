@@ -1,0 +1,56 @@
+---
+import TestimonialCard from '../ui/TestimonialCard.astro'
+import type { Testimonial } from '../../types/index'
+
+// TODO: reemplazar con testimonios reales del dojo
+const testimonials: Testimonial[] = [
+  {
+    id: '1',
+    quote: 'Mi hijo ha ganado una confianza increíble. Los instructores tienen una paciencia y técnica de primer nivel.',
+    author: 'Carolina Mendez',
+    role: 'Apoderada · Programa Infantil',
+    avatarUrl: '/images/testimonials/carolina.jpg',
+  },
+  {
+    id: '2',
+    quote: 'Buscaba una actividad para desestresarme y encontré un dojo con una mística única. El nivel técnico es altísimo.',
+    author: 'Rodrigo Palma',
+    role: 'Alumno Adulto · 42 años',
+    avatarUrl: '/images/testimonials/rodrigo.jpg',
+  },
+  {
+    id: '3',
+    quote: 'Entrenar JKA es distinto a todo. Se nota la trayectoria y el vínculo directo con la tradición de Japón.',
+    author: 'Daniela Fuentes',
+    role: 'Cinturón Marrón · 7 años practicando',
+    avatarUrl: '/images/testimonials/daniela.jpg',
+  },
+]
+---
+
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-jka-red font-bold text-xs uppercase tracking-widest block mb-4">
+        Lo que dicen de nosotros
+      </span>
+      <h2 class="font-h-display text-5xl text-ink mb-4">
+        Impacto en Nuestra Comunidad
+      </h2>
+      <div class="flex items-center justify-center gap-2">
+        <div class="flex text-yellow-400">
+          {Array.from({ length: 5 }).map(() => (
+            <span class="material-symbols-outlined text-xl">star</span>
+          ))}
+        </div>
+        <span class="font-black text-ink">4.9/5 en Google</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {testimonials.map((testimonial) => (
+        <TestimonialCard testimonial={testimonial} />
+      ))}
+    </div>
+  </div>
+</section>

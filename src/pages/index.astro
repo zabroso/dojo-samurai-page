@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import NavBar from '../components/layout/NavBar.astro'
+import Footer from '../components/layout/Footer.astro'
+
+import HeroSection from '../components/sections/HeroSection.astro'
+import BenefitsSection from '../components/sections/BenefitsSection.astro'
+import ProgramsSection from '../components/sections/ProgramsSection.astro'
+import ScheduleSection from '../components/sections/ScheduleSection.astro'
+import NewsSection from '../components/sections/NewsSection.astro'
+import TestimonialsSection from '../components/sections/TestimonialsSection.astro'
+import InstitutionsSection from '../components/sections/InstitutionsSection.astro'
+import LocationSection from '../components/sections/LocationSection.astro'
+import CTABanner from '../components/sections/CTABanner.astro'
+---
+
+<BaseLayout>
+  <NavBar />
+  <main>
+    <HeroSection />
+    <BenefitsSection />
+    <ProgramsSection />
+    <ScheduleSection />
+    <NewsSection />
+    <TestimonialsSection />
+    <InstitutionsSection />
+    <LocationSection />
+    <CTABanner />
+  </main>
+  <Footer />
+</BaseLayout>

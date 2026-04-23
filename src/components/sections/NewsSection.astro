@@ -1,0 +1,24 @@
+---
+import NewsCarousel from '../ui/NewsCarousel.tsx'
+import { mockNewsResponse } from '../../data/mock'
+---
+
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+      <div>
+        <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-4 block">
+          Actualidad
+        </span>
+        <h2 class="font-h-display text-5xl text-ink uppercase tracking-tight">
+          Lo Último del Dojo
+        </h2>
+      </div>
+      <p class="text-muted max-w-sm text-base leading-relaxed">
+        Exámenes, seminarios, nuevos cursos y vida de la comunidad Samurai JKA.
+      </p>
+    </div>
+
+    <NewsCarousel client:load initialData={mockNewsResponse} />
+  </div>
+</section>

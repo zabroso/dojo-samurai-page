@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Manrope:wght@400;500;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "outline-variant": "#e5bdbb",
+                      "surface": "#F5F4F0",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#c8102e",
+                      "on-tertiary": "#ffffff",
+                      "primary-fixed": "#ffdad8",
+                      "on-surface-variant": "#5c403f",
+                      "ink": "#0D0D0D",
+                      "primary-fixed-dim": "#ffb3b1",
+                      "inverse-primary": "#ffb3b1",
+                      "inverse-surface": "#3f2c2b",
+                      "surface-bright": "#fff8f7",
+                      "tertiary-fixed-dim": "#82d1ed",
+                      "secondary-container": "#e5e2e1",
+                      "tertiary": "#005468",
+                      "surface-container-lowest": "#ffffff",
+                      "secondary-fixed-dim": "#c9c6c5",
+                      "on-secondary": "#ffffff",
+                      "background": "#fff8f7",
+                      "on-tertiary-container": "#b6ebff",
+                      "secondary-fixed": "#e5e2e1",
+                      "surface-container-highest": "#fbdbda",
+                      "on-tertiary-fixed": "#001f28",
+                      "on-primary-fixed": "#410007",
+                      "jka-red-dark": "#A50D24",
+                      "surface-container-high": "#ffe1e0",
+                      "on-secondary-fixed-variant": "#474646",
+                      "surface-dim": "#f2d3d1",
+                      "tertiary-fixed": "#b6ebff",
+                      "primary": "#9e001f",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "inverse-on-surface": "#ffedeb",
+                      "border": "#E0DDD7",
+                      "tertiary-container": "#006e87",
+                      "surface-tint": "#bf0229",
+                      "on-secondary-container": "#656464",
+                      "on-background": "#281717",
+                      "on-error": "#ffffff",
+                      "on-primary-fixed-variant": "#92001c",
+                      "on-surface": "#281717",
+                      "surface-container-low": "#fff0ef",
+                      "on-tertiary-fixed-variant": "#004e60",
+                      "on-primary-container": "#ffdad8",
+                      "surface-container": "#ffe9e8",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "jka-red": "#C8102E",
+                      "secondary": "#5f5e5e",
+                      "surface-variant": "#fbdbda",
+                      "on-error-container": "#93000a",
+                      "muted": "#6B6B6B",
+                      "dark-bg": "#111111",
+                      "outline": "#906f6e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "section-padding": "80px",
+                      "grid-gutter": "20px",
+                      "stack-gap": "24px",
+                      "container-max-width": "1200px"
+              },
+              "fontFamily": {
+                      "eyebrow": ["Manrope"],
+                      "body": ["Manrope"],
+                      "h2-section": ["Bebas Neue"],
+                      "h1-hero": ["Bebas Neue"],
+                      "h3-card": ["Manrope"],
+                      "small": ["Manrope"]
+              },
+              "fontSize": {
+                      "eyebrow": ["11px", {"lineHeight": "1.2", "letterSpacing": "0.12em", "fontWeight": "700"}],
+                      "body": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "h2-section": ["42px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                      "h1-hero": ["64px", {"lineHeight": "1.1", "fontWeight": "400"}],
+                      "h3-card": ["22px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                      "small": ["14px", {"lineHeight": "1.4", "fontWeight": "500"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Manrope', sans-serif; background-color: #fff8f7; color: #281717; }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 20px;
+        }
+    </style>
+</head>
+<body class="antialiased">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 bg-white border-b border-zinc-200">
+<div class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<span class="text-xl font-black text-zinc-900 tracking-tight">JKA Academy</span>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-zinc-600 font-bold hover:text-red-700 transition-colors duration-200" href="#programas">Programas</a>
+<a class="text-zinc-600 font-bold hover:text-red-700 transition-colors duration-200" href="#beneficios">Beneficios</a>
+<a class="text-zinc-600 font-bold hover:text-red-700 transition-colors duration-200" href="#metodologia">Impacto</a>
+<a class="text-zinc-600 font-bold hover:text-red-700 transition-colors duration-200" href="#casos">Casos Reales</a>
+<button class="bg-jka-red text-white px-7 py-3 rounded-none font-bold text-small hover:bg-jka-red-dark transition-all">Agendar Diagnóstico</button>
+</div>
+<button class="md:hidden text-zinc-900">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative bg-zinc-900 overflow-hidden min-h-[870px] flex items-center">
+<div class="absolute inset-0 opacity-40">
+<img alt="Karate en colegios" class="w-full h-full object-cover" data-alt="disciplined group of young students in white karate uniforms practicing structured movements in a bright modern school gymnasium" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdAuQdbZa-Jq1eN007jcOCwlPfO4J8i_QmAtg7HkkXtkb9pf3up1JYlBnGToKE83CmuTVNS9BcHCbmQgziZxb_jU93ZzvPmbP7YSlzEWlmK4ylK1mv6NnPWkoMVZujCL-Y1XrBCWE1suTtoqK6onel-CyGBSE0KuzvJOkjme1XWgje-rJ18NrzYlQyfEDNJqcFapg8kZ-fxARnemCzUWKyQAa96x1Y1kY2Q0aGUTBcXoDaN47BV4mgOu1vBZrwyHo4jSpYiah0aXwB"/>
+<div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/60 to-transparent"></div>
+</div>
+<div class="relative max-w-7xl mx-auto px-8 w-full z-10 py-24">
+<div class="max-w-3xl">
+<span class="font-eyebrow text-eyebrow text-jka-red uppercase tracking-[0.2em] mb-4 block">Alianza Institucional • V Región</span>
+<h1 class="font-h1-hero text-h1-hero text-on-primary mb-6 leading-tight">Implementa un programa de disciplina y convivencia escolar en tu colegio</h1>
+<p class="font-body text-body text-surface-container-low mb-2 max-w-2xl">
+                Reducimos conductas disruptivas en sala, mejoramos la concentración y entregamos una solución estructurada que se implementa sin carga adicional para su equipo docente.
+            </p>
+<span class="block text-jka-red font-bold text-xs uppercase tracking-widest mb-10">+45 colegios en la V Región ya implementan este programa</span>
+<div class="flex flex-col sm:flex-row gap-4 items-center">
+<div class="flex flex-col gap-2">
+<button class="bg-jka-red text-on-primary px-8 py-4 font-bold rounded-none hover:bg-jka-red-dark transition-all uppercase tracking-wider text-sm">Agendar diagnóstico institucional</button>
+<p class="text-[10px] text-zinc-400 font-bold uppercase tracking-tighter">Si no es viable para su institución, se lo diremos en la primera reunión.</p>
+</div>
+<a class="border border-white text-white px-8 py-4 font-bold rounded-none hover:bg-white hover:text-ink transition-all uppercase tracking-wider text-sm text-center" href="#metodologia">Ver cómo funciona</a>
+</div>
+</div>
+</div>
+<!-- Facts Bar -->
+<div class="absolute bottom-0 left-0 w-full bg-white/10 backdrop-blur-md border-t border-white/10 py-6">
+<div class="max-w-7xl mx-auto px-8 flex justify-between items-center text-white">
+<div class="text-center"><span class="block font-h2-section text-2xl">+45</span><span class="text-[10px] uppercase tracking-widest opacity-70">Colegios Activos en la V Región</span></div>
+<div class="h-8 w-[1px] bg-white/20"></div>
+<div class="text-center"><span class="block font-h2-section text-2xl">2–4 sem</span><span class="text-[10px] uppercase tracking-widest opacity-70">Implementación Promedio</span></div>
+<div class="h-8 w-[1px] bg-white/20"></div>
+<div class="text-center"><span class="block font-h2-section text-2xl">PK - 4°M</span><span class="text-[10px] uppercase tracking-widest opacity-70">Desde Prekínder a 4° Medio</span></div>
+<div class="h-8 w-[1px] bg-white/20"></div>
+<div class="text-center"><span class="block font-h2-section text-2xl">100%</span><span class="text-[10px] uppercase tracking-widest opacity-70">Activos todo el año escolar</span></div>
+</div>
+</div>
+</header>
+<!-- Friction Removal Block -->
+<section class="bg-surface py-12 border-b border-border">
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-4 gap-8">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-jka-red" data-icon="domain_disabled">domain_disabled</span>
+<span class="text-xs font-bold uppercase tracking-tight">Sin infraestructura especial</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-jka-red" data-icon="person_check">person_check</span>
+<span class="text-xs font-bold uppercase tracking-tight">Instructores Incluidos</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-jka-red" data-icon="bolt">bolt</span>
+<span class="text-xs font-bold uppercase tracking-tight">Implementación Rápida</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-jka-red" data-icon="schedule">schedule</span>
+<span class="text-xs font-bold uppercase tracking-tight">Adaptable a horario escolar</span>
+</div>
+</div>
+</section>
+<!-- Problema Section (Empathy) -->
+<section class="py-24 bg-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Diagnóstico Institucional</span>
+<h2 class="font-h2-section text-h2-section text-ink mb-8">Desafíos críticos en la gestión escolar</h2>
+<p class="font-body text-body text-muted mb-6 leading-relaxed">
+                    Sabemos que los equipos de convivencia y docencia enfrentan una carga sin precedentes debido al aumento de conductas disruptivas y la falta de canales efectivos para la energía de los alumnos.
+                </p>
+<p class="font-body text-sm font-bold text-ink mb-8 border-l-2 border-jka-red pl-4">
+                    Esto impacta directamente en el tiempo efectivo de clases y en los indicadores de convivencia exigidos por el sistema educativo.
+                </p>
+<ul class="space-y-6 mb-10">
+<li class="flex items-start gap-3 text-ink font-bold">
+<span class="material-symbols-outlined text-jka-red mt-1" data-icon="report_problem">report_problem</span>
+<span>Aumento de conflictos en sala y recreos.</span>
+</li>
+<li class="flex items-start gap-3 text-ink font-bold">
+<span class="material-symbols-outlined text-jka-red mt-1" data-icon="psychiatry">psychiatry</span>
+<span>Sobrecarga en equipos de convivencia escolar.</span>
+</li>
+<li class="flex items-start gap-3 text-ink font-bold">
+<span class="material-symbols-outlined text-jka-red mt-1" data-icon="energy_savings_leaf">energy_savings_leaf</span>
+<span>Dificultad para canalizar energía de forma positiva.</span>
+</li>
+</ul>
+<div class="flex flex-col gap-3">
+<button class="bg-jka-red text-white px-8 py-4 font-bold text-sm uppercase tracking-widest w-fit">Agendar Diagnóstico sin costo</button>
+<p class="text-[10px] text-muted font-bold uppercase tracking-tighter">Respuesta en menos de 24 horas hábiles</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface p-8 border border-border">
+<span class="block font-h2-section text-jka-red text-4xl mb-2">60%</span>
+<p class="text-small text-muted font-bold">Aumento en incidentes de convivencia reportados.</p>
+</div>
+<div class="bg-ink p-8 text-white">
+<span class="block font-h2-section text-white text-4xl mb-2">85%</span>
+<p class="text-small opacity-70 font-bold">De los docentes siente fatiga por manejo de conducta.</p>
+</div>
+<div class="col-span-2 bg-zinc-100 p-8 border border-border">
+<p class="font-body italic text-ink font-medium">"El problema no es la disciplina, sino la falta de herramientas estructurales para que el alumno autorregule su comportamiento en el aula."</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Karate? (Differentiation) -->
+<section class="py-24 bg-zinc-900 text-white">
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Diferenciación</span>
+<h2 class="font-h2-section text-h2-section mb-8">¿Por qué karate y no otra actividad?</h2>
+<p class="font-body text-xl text-zinc-400 leading-relaxed mb-8">
+                    A diferencia de talleres deportivos tradicionales, el karate trabaja bajo un sistema estructurado de normas, jerarquía y progresión individual, lo que genera transferencia directa al comportamiento en sala.
+                </p>
+<div class="grid grid-cols-2 gap-8">
+<div>
+<h4 class="text-jka-red font-bold uppercase text-xs mb-3">Normas Claras</h4>
+<p class="text-sm text-zinc-500">Protocolos de respeto que se aplican desde el minuto uno.</p>
+</div>
+<div>
+<h4 class="text-jka-red font-bold uppercase text-xs mb-3">Jerarquía</h4>
+<p class="text-sm text-zinc-500">Reconocimiento de la autoridad y roles dentro del grupo.</p>
+</div>
+</div>
+</div>
+<div class="relative aspect-video bg-zinc-800 flex items-center justify-center overflow-hidden border border-white/10">
+<img alt="Disciplina en el dojo" class="absolute inset-0 w-full h-full object-cover opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdAuQdbZa-Jq1eN007jcOCwlPfO4J8i_QmAtg7HkkXtkb9pf3up1JYlBnGToKE83CmuTVNS9BcHCbmQgziZxb_jU93ZzvPmbP7YSlzEWlmK4ylK1mv6NnPWkoMVZujCL-Y1XrBCWE1suTtoqK6onel-CyGBSE0KuzvJOkjme1XWgje-rJ18NrzYlQyfEDNJqcFapg8kZ-fxARnemCzUWKyQAa96x1Y1kY2Q0aGUTBcXoDaN47BV4mgOu1vBZrwyHo4jSpYiah0aXwB"/>
+<div class="relative z-10 p-8 text-center">
+<span class="material-symbols-outlined text-6xl text-jka-red mb-4" data-icon="verified">verified</span>
+<p class="font-h2-section text-2xl uppercase tracking-widest">Sistema Estructurado</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solución Section -->
+<section class="py-24 bg-surface" id="metodologia">
+<div class="max-w-7xl mx-auto px-8 text-center mb-16">
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Impacto Real</span>
+<h2 class="font-h2-section text-h2-section text-ink mb-4">Resultados observables en el comportamiento</h2>
+<p class="text-xs font-bold text-muted uppercase tracking-widest">(Según reportes de convivencia escolar)</p>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-8">
+<div class="bg-white p-10 border border-border flex flex-col items-start">
+<span class="material-symbols-outlined text-4xl text-jka-red mb-6" data-icon="rule">rule</span>
+<h3 class="font-h3-card text-h3-card mb-4">Reglas Claras en el Aula</h3>
+<p class="font-body text-body text-muted mb-2">Los alumnos aprenden protocolos de respeto que trasladan naturalmente a su comportamiento frente al docente y pares.</p>
+<span class="text-xs font-bold text-jka-red mt-auto uppercase tracking-tighter">(Mayor autorregulación)</span>
+</div>
+<div class="bg-white p-10 border border-border flex flex-col items-start">
+<span class="material-symbols-outlined text-4xl text-jka-red mb-6" data-icon="assignment_turned_in">assignment_turned_in</span>
+<h3 class="font-h3-card text-h3-card mb-4">Seguimiento de Instrucciones</h3>
+<p class="font-body text-body text-muted mb-2">Mejora drástica en la capacidad de concentración y ejecución de tareas bajo mando directo.</p>
+<span class="text-xs font-bold text-jka-red mt-auto uppercase tracking-tighter">(Mejor uso del tiempo pedagógico)</span>
+</div>
+<div class="bg-white p-10 border border-border flex flex-col items-start">
+<span class="material-symbols-outlined text-4xl text-jka-red mb-6" data-icon="handshake">handshake</span>
+<h3 class="font-h3-card text-h3-card mb-4">Reducción de Conflictos</h3>
+<p class="font-body text-body text-muted mb-2">Canalización física controlada que disminuye incidentes de bullying y agresiones entre alumnos.</p>
+<span class="text-xs font-bold text-jka-red mt-auto uppercase tracking-tighter">(Menor carga para docentes)</span>
+</div>
+</div>
+</section>
+<!-- New Block: Real Case Study -->
+<section class="py-16 bg-white border-y border-border">
+<div class="max-w-7xl mx-auto px-8">
+<div class="bg-ink p-12 text-white flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<span class="text-jka-red font-bold uppercase text-[10px] tracking-widest mb-4 block">Caso de Éxito Real</span>
+<h3 class="font-h2-section text-3xl mb-4">Colegio Saint Dominic – Viña del Mar</h3>
+<ul class="space-y-3">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-jka-red text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm text-zinc-300 font-medium">Implementación operativa en solo 3 semanas.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-jka-red text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm text-zinc-300 font-medium">+120 alumnos activos en programa anual.</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-jka-red text-sm" data-icon="check_circle">check_circle</span>
+<span class="text-sm text-zinc-300 font-medium">Reducción drástica de conflictos reportados por equipo de convivencia.</span>
+</li>
+</ul>
+</div>
+<div class="w-full md:w-1/3 aspect-square bg-zinc-800 flex flex-col items-center justify-center border border-white/10 p-8 text-center">
+<span class="font-h2-section text-6xl text-white mb-2">8 AÑOS</span>
+<span class="text-[10px] uppercase font-bold text-zinc-400 tracking-widest">Alianza Continua</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Beneficios Section -->
+<section class="py-24 bg-white" id="beneficios">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+<div class="max-w-2xl">
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Valor para la Institución</span>
+<h2 class="font-h2-section text-h2-section text-ink">Ventajas Operativas para Directivos</h2>
+</div>
+<button class="bg-ink text-white px-8 py-3 font-bold text-sm tracking-widest uppercase">Descargar Dossier Técnico</button>
+</div>
+<div class="grid md:grid-cols-3 gap-8 mb-16">
+<!-- Card 1 -->
+<div class="group border border-border p-1 bg-white hover:border-jka-red transition-colors">
+<div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-zinc-300" data-icon="clinical_notes">clinical_notes</span>
+</div>
+<div class="px-6 pb-8">
+<h3 class="font-h3-card text-h3-card mb-3">Clima escolar medible</h3>
+<p class="text-body text-muted text-sm mb-4">Disminución estadística de anotaciones negativas y reportes de convivencia escolar.</p>
+<span class="text-xs font-bold text-jka-red uppercase">(Indicadores de gestión escolar)</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group border border-border p-1 bg-white hover:border-jka-red transition-colors">
+<div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-zinc-300" data-icon="groups">groups</span>
+</div>
+<div class="px-6 pb-8">
+<h3 class="font-h3-card text-h3-card mb-3">Menor carga para docentes</h3>
+<p class="text-body text-muted text-sm mb-4">Alumnos más autorregulados permiten que el docente se enfoque 100% en la enseñanza académica.</p>
+<span class="text-xs font-bold text-jka-red uppercase">(Menos interrupciones en clase)</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group border border-border p-1 bg-white hover:border-jka-red transition-colors">
+<div class="aspect-[4/3] overflow-hidden mb-6 bg-zinc-100 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-zinc-300" data-icon="format_list_bulleted">format_list_bulleted</span>
+</div>
+<div class="px-6 pb-8">
+<h3 class="font-h3-card text-h3-card mb-3">Mayor orden en clases</h3>
+<p class="text-body text-muted text-sm mb-4">Transferencia de la disciplina del dojo a la estructura jerárquica del salón de clases.</p>
+<span class="text-xs font-bold text-jka-red uppercase">(Mejor uso del tiempo pedagógico)</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-4">
+<button class="bg-jka-red text-white px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-jka-red-dark transition-all">Agendar Evaluación de Factibilidad</button>
+<p class="text-[10px] text-muted font-bold uppercase tracking-tighter">Si no es viable para su institución, se lo diremos en la primera reunión.</p>
+</div>
+</div>
+</section>
+<!-- Cómo Funciona Section -->
+<section class="py-24 bg-ink text-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-20">
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Proceso de Integración</span>
+<h2 class="font-h2-section text-h2-section">Implementación Institucional Sin Fricción</h2>
+</div>
+<div class="relative grid md:grid-cols-4 gap-12 mb-16">
+<!-- Line background for desktop -->
+<div class="hidden md:block absolute top-12 left-0 w-full h-[1px] bg-white/10 -z-0"></div>
+<div class="relative z-10">
+<div class="w-24 h-24 bg-white/5 border border-white/10 flex items-center justify-center mb-8 mx-auto md:mx-0">
+<span class="font-h2-section text-4xl text-jka-red">01</span>
+</div>
+<h4 class="font-bold text-lg mb-3">Diagnóstico</h4>
+<p class="text-sm text-zinc-400">Evaluamos perfil de conducta e infraestructura disponible.</p>
+</div>
+<div class="relative z-10">
+<div class="w-24 h-24 bg-white/5 border border-white/10 flex items-center justify-center mb-8 mx-auto md:mx-0">
+<span class="font-h2-section text-4xl text-jka-red">02</span>
+</div>
+<h4 class="font-bold text-lg mb-3">Propuesta Operativa</h4>
+<p class="text-sm text-zinc-400">Definimos modalidad (Curricular o Taller) y frecuencia.</p>
+</div>
+<div class="relative z-10">
+<div class="w-24 h-24 bg-white/5 border border-white/10 flex items-center justify-center mb-8 mx-auto md:mx-0">
+<span class="font-h2-section text-4xl text-jka-red">03</span>
+</div>
+<h4 class="font-bold text-lg mb-3">Activación</h4>
+<p class="text-sm text-zinc-400">Inicio de clases con staff certificado JKA en su colegio.</p>
+</div>
+<div class="relative z-10">
+<div class="w-24 h-24 bg-white/5 border border-white/10 flex items-center justify-center mb-8 mx-auto md:mx-0">
+<span class="font-h2-section text-4xl text-jka-red">04</span>
+</div>
+<h4 class="font-bold text-lg mb-3">Seguimiento</h4>
+<p class="text-sm text-zinc-400">Reportes trimestrales de avance en conducta y técnica.</p>
+</div>
+</div>
+<!-- Intermediate CTA -->
+<div class="flex flex-col items-center gap-6">
+<button class="bg-jka-red text-white px-12 py-5 font-bold uppercase tracking-widest text-sm hover:bg-jka-red-dark transition-all">Evaluar implementación en mi colegio</button>
+<p class="text-zinc-500 text-[10px] uppercase font-bold tracking-widest">Sin compromiso de contratación inicial • Respuesta en 24h</p>
+</div>
+</div>
+</section>
+<!-- Social Proof (Logos) -->
+<section class="py-16 bg-white border-y border-border" id="casos">
+<div class="max-w-7xl mx-auto px-8">
+<p class="text-center font-eyebrow text-eyebrow text-muted mb-12">COLEGIOS CON PROGRAMAS ACTIVOS</p>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 items-center justify-items-center">
+<div class="flex flex-col items-center text-center">
+<span class="text-xl font-h2-section text-ink tracking-widest">COLEGIO SAINT DOMINIC</span>
+<span class="text-[9px] font-bold text-muted uppercase mt-2">Viña del Mar • 8 años activo</span>
+<span class="text-[8px] font-medium text-jka-red uppercase">Taller extracurricular • +120 alumnos</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="text-xl font-h2-section text-ink tracking-widest">SCUOLA ITALIANA</span>
+<span class="text-[9px] font-bold text-muted uppercase mt-2">Valparaíso • 12 años activo</span>
+<span class="text-[8px] font-medium text-jka-red uppercase">Prog. curricular + talleres • +150 alumnos</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="text-xl font-h2-section text-ink tracking-widest">BRITISH ROYAL SCHOOL</span>
+<span class="text-[9px] font-bold text-muted uppercase mt-2">Viña del Mar • 5 años activo</span>
+<span class="text-[8px] font-medium text-jka-red uppercase">Taller formativo • +80 alumnos</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="text-xl font-h2-section text-ink tracking-widest">LYCÉE CLAUDE GAY</span>
+<span class="text-[9px] font-bold text-muted uppercase mt-2">V Región • 10 años activo</span>
+<span class="text-[8px] font-medium text-jka-red uppercase">Programa Institucional • +100 alumnos</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Planes Section -->
+<section class="py-24 bg-surface" id="programas">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-16">
+<span class="font-eyebrow text-eyebrow text-jka-red mb-4 block">Nuestros Formatos</span>
+<h2 class="font-h2-section text-h2-section text-ink">Modalidades de Trabajo y Operación</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-8">
+<div class="bg-white border-t-4 border-t-jka-red p-12 shadow-sm">
+<h3 class="font-h3-card text-3xl mb-2">Talleres Extracurriculares</h3>
+<p class="text-xs font-bold text-jka-red uppercase mb-6">Financiado por Apoderados / Copago</p>
+<p class="font-body text-body text-muted mb-8">Programas voluntarios fuera del horario de clases. Frecuencia de 2 veces por semana. JKA Academy gestiona inscripciones y cobros si el colegio lo requiere.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-jka-red text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold">Cero costo fijo para la institución</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-jka-red text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold">Exámenes internacionales incluidos</span>
+</li>
+</ul>
+<button class="w-full bg-ink text-white py-4 font-bold uppercase tracking-wider text-xs">Consultar Disponibilidad de Cupos</button>
+</div>
+<div class="bg-zinc-900 text-white p-12 shadow-sm">
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-h2-section text-3xl">Programa Curricular</h3>
+<span class="bg-jka-red text-[10px] font-bold px-2 py-1 uppercase tracking-tighter">Plan de Estudio</span>
+</div>
+<p class="text-xs font-bold text-zinc-400 uppercase mb-6">Financiado por Institución / SEP</p>
+<p class="font-body text-body text-zinc-400 mb-8">Integración directa en el horario de Educación Física. Alineado con objetivos ministeriales de desarrollo motriz y convivencia.</p>
+<ul class="space-y-4 mb-10">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-jka-red text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold text-zinc-300">Apoyo directo a convivencia escolar</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-jka-red text-xl" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-bold text-zinc-300">Planificación pedagógica entregable</span>
+</li>
+</ul>
+<button class="w-full bg-jka-red text-white py-4 font-bold uppercase tracking-wider text-xs">Agendar Reunión de Factibilidad</button>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 bg-white">
+<div class="max-w-3xl mx-auto px-8">
+<h2 class="font-h2-section text-h2-section text-ink text-center mb-12">Consultas frecuentes</h2>
+<div class="space-y-6">
+<div class="border-b border-border pb-6">
+<button class="flex justify-between items-center w-full text-left font-h3-card text-lg group">
+                    ¿Qué infraestructura requiere el colegio?
+                    <span class="material-symbols-outlined group-hover:text-jka-red transition-colors" data-icon="add">add</span>
+</button>
+<div class="mt-4 text-muted text-sm leading-relaxed">No requiere máquinas ni instalaciones fijas. Solo un espacio despejado (salón, patio techado o gimnasio). Nosotros aportamos el material técnico móvil si es necesario.</div>
+</div>
+<div class="border-b border-border pb-6">
+<button class="flex justify-between items-center w-full text-left font-h3-card text-lg group">
+                    ¿Cómo se integra con los planes de convivencia escolar?
+                    <span class="material-symbols-outlined group-hover:text-jka-red transition-colors" data-icon="add">add</span>
+</button>
+<div class="mt-4 text-muted text-sm leading-relaxed">Nuestro programa incluye reportes trimestrales de progreso conductual de cada alumno, los cuales son entregables directamente a sus equipos de convivencia escolar como evidencia de intervención.</div>
+</div>
+<div class="border-b border-border pb-6">
+<button class="flex justify-between items-center w-full text-left font-h3-card text-lg group">
+                    ¿El staff es externo o del colegio?
+                    <span class="material-symbols-outlined group-hover:text-jka-red transition-colors" data-icon="add">add</span>
+</button>
+<div class="mt-4 text-muted text-sm leading-relaxed">Proveemos instructores Senior certificados por la JKA, con experiencia pedagógica comprobada en instituciones educativas de la zona.</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Final Section -->
+<section class="py-24 bg-jka-red relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+<div class="max-w-7xl mx-auto px-8 relative z-10 grid md:grid-cols-2 gap-16 items-center">
+<div class="text-white">
+<h2 class="font-h1-hero text-h1-hero mb-6">Eleve el estándar de convivencia de su institución</h2>
+<p class="font-body text-xl opacity-90 mb-10 leading-relaxed">Agende una reunión de diagnóstico con nuestra dirección técnica para conocer cómo podemos potenciar a sus alumnos y reducir la carga disciplinaria.</p>
+<div class="bg-white/20 p-6 inline-flex items-center gap-4">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="event_busy">event_busy</span>
+<div>
+<span class="block font-bold text-sm uppercase">Atención: Cupos limitados por zona</span>
+<span class="text-xs opacity-80 font-medium">Agenda disponible para implementaciones este semestre.</span>
+</div>
+</div>
+</div>
+<div class="bg-white p-10 shadow-2xl">
+<h3 class="font-h3-card text-ink mb-6">Agenda un diagnóstico sin costo</h3>
+<form class="space-y-4">
+<div>
+<label class="text-[10px] uppercase font-bold text-muted block mb-1">Nombre de la Institución</label>
+<input class="w-full border-border bg-surface px-4 py-3 text-sm focus:ring-jka-red focus:border-jka-red border" placeholder="Colegio Ejemplo" type="text"/>
+</div>
+<div>
+<label class="text-[10px] uppercase font-bold text-muted block mb-1">Tu Cargo</label>
+<input class="w-full border-border bg-surface px-4 py-3 text-sm focus:ring-jka-red focus:border-jka-red border" placeholder="Director / Coordinador de Convivencia" type="text"/>
+</div>
+<div>
+<label class="text-[10px] uppercase font-bold text-muted block mb-1">Correo Institucional</label>
+<input class="w-full border-border bg-surface px-4 py-3 text-sm focus:ring-jka-red focus:border-jka-red border" placeholder="contacto@colegio.cl" type="email"/>
+</div>
+<button class="w-full bg-jka-red text-white py-4 font-bold uppercase tracking-widest text-xs mt-4">Solicitar Diagnóstico Institucional</button>
+<p class="text-center text-[10px] text-muted mt-4 font-bold uppercase tracking-tighter">Respuesta garantizada en menos de 24 horas hábiles</p>
+<p class="text-center text-[9px] text-zinc-400 font-bold uppercase mt-2">Si no es viable para su colegio, se lo diremos honestamente.</p>
+</form>
+</div>
+</div>
+</section>
+<!-- Floating Action WhatsApp -->
+<a class="fixed bottom-8 right-8 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center text-white shadow-xl z-[60] hover:scale-110 transition-transform" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="chat" data-weight="fill">chat</span>
+</a>
+<!-- Footer -->
+<footer class="bg-zinc-50 border-t border-zinc-200">
+<div class="py-16 px-8 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-center md:text-left">
+<span class="text-lg font-bold text-zinc-900 block mb-2">JKA Academy</span>
+<p class="text-sm font-medium text-zinc-600 max-w-xs">© 2024 Academia de Karate JKA. Soluciones de Disciplina y Convivencia Escolar.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-sm font-medium text-zinc-500 hover:text-red-700 underline-offset-4 hover:underline" href="#">Privacidad Institucional</a>
+<a class="text-sm font-medium text-zinc-500 hover:text-red-700 underline-offset-4 hover:underline" href="#">Términos de Servicio</a>
+<a class="text-sm font-medium text-zinc-500 hover:text-red-700 underline-offset-4 hover:underline" href="#">Portal para Colegios</a>
+<a class="text-sm font-medium text-zinc-500 hover:text-red-700 underline-offset-4 hover:underline" href="#">Contacto Directo</a>
+</div>
+</div>
+</footer>
+</body></html>

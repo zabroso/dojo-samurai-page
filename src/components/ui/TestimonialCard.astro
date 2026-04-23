@@ -1,0 +1,31 @@
+---
+import type { Testimonial } from '../../types/index'
+
+interface Props {
+  testimonial: Testimonial
+}
+
+const { testimonial } = Astro.props
+const { quote, author, role, avatarUrl } = testimonial
+---
+
+<div class="bg-white p-10 rounded-3xl shadow-sm relative group hover:shadow-xl jka-transition border border-border/50">
+  <div class="absolute top-8 right-8 text-jka-red/10 text-8xl font-serif select-none group-hover:text-jka-red/20 jka-transition leading-none">
+    "
+  </div>
+  <p class="text-lg text-ink leading-relaxed italic relative z-10 mb-8">
+    "{quote}"
+  </p>
+  <div class="flex items-center gap-4">
+    <img
+      src={avatarUrl}
+      alt={author}
+      class="w-14 h-14 rounded-full object-cover bg-neutral-200"
+      loading="lazy"
+    />
+    <div>
+      <p class="text-ink font-extrabold text-sm">{author}</p>
+      <p class="text-[10px] text-neutral-400 uppercase tracking-widest font-bold">{role}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,95 @@
+---
+import { WHATSAPP_BASE, HONBU_ADDRESS, HONBU_MAPS_URL } from '../../config'
+
+const waHref = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero conocer el dojo')}`
+
+// TODO: reemplazar el src del iframe con el embed real de Google Maps
+// para obtenerlo: Google Maps → buscar la dirección → Compartir → Insertar mapa → copiar src
+const MAPS_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.0!2d-71.583348!3d-33.023214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDAxJzIzLjYiUyA3McKwMzUnMDAuMSJX!5e0!3m2!1ses!2scl!4v1700000000000!5m2!1ses!2scl'
+---
+
+<section class="py-24 bg-ink text-white overflow-hidden relative" id="sedes">
+  <div class="relative z-10 max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+
+      <div>
+        <span class="text-jka-red font-extrabold text-xs uppercase tracking-widest mb-4 block">
+          Entrena en un dojo profesional en Viña del Mar
+        </span>
+        <h2 class="font-h-display text-6xl uppercase mb-8">Honbu Dojo Recreo</h2>
+
+        <div class="space-y-6 mb-12">
+          <div class="flex items-start gap-5">
+            <div class="bg-jka-red p-3 rounded-lg shrink-0">
+              <span class="material-symbols-outlined text-white">location_on</span>
+            </div>
+            <div>
+              <p class="text-2xl font-bold">{HONBU_ADDRESS}</p>
+              <p class="text-neutral-400 text-sm">A pasos de Av. España, Viña del Mar</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5">
+            <div class="bg-white/10 p-3 rounded-lg shrink-0">
+              <span class="material-symbols-outlined text-white">check_circle</span>
+            </div>
+            <div>
+              <p class="text-lg font-bold">Instalaciones de primer nivel</p>
+              <p class="text-neutral-400 text-sm">
+                2 salas de entrenamiento, duchas con agua caliente, lockers,
+                sala de apoderados con visión al dojo en tiempo real y administradora presente.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-5">
+            <div class="bg-white/10 p-3 rounded-lg shrink-0">
+              <span class="material-symbols-outlined text-white">videocam</span>
+            </div>
+            <div>
+              <p class="text-lg font-bold">Sistema de vigilancia inteligente</p>
+              <p class="text-neutral-400 text-sm">
+                Cámaras de seguridad en todas las áreas. Los apoderados pueden supervisar
+                a sus hijos sin interrumpir el flujo de la clase.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-5">
+          <a
+            href={HONBU_MAPS_URL}
+            target="_blank"
+            rel="noreferrer"
+            class="bg-jka-red text-white px-10 py-5 rounded-xl font-bold text-center jka-transition hover:bg-jka-red-dark shadow-2xl text-base"
+          >
+            Ver en Google Maps
+          </a>
+          <a
+            href={waHref}
+            target="_blank"
+            rel="noreferrer"
+            class="border border-white/20 text-white px-10 py-5 rounded-xl font-bold text-center jka-transition hover:bg-white/10 text-base"
+          >
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full aspect-video rounded-3xl overflow-hidden shadow-2xl border-4 border-white/5">
+        <iframe
+          src={MAPS_EMBED_SRC}
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación Samurai Honbu Dojo, Los Baños 55, Recreo, Viña del Mar"
+        ></iframe>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,65 @@
+---
+import ScheduleCard from '../ui/ScheduleCard.astro'
+import type { Schedule } from '../../types/index'
+
+// TODO: reemplazar con horarios reales cuando estén disponibles
+const schedules: Schedule[] = [
+  {
+    id: 'manana',
+    timeOfDay: 'Mañana',
+    icon: 'wb_sunny',
+    slots: [
+      { group: 'Adultos', time: '10:00 - 11:30', spotsLeft: 5 },
+    ],
+  },
+  {
+    id: 'tarde',
+    timeOfDay: 'Tarde',
+    icon: 'light_mode',
+    featured: true,
+    slots: [
+      { group: 'Infantil', time: '16:30 - 17:30', spotsLeft: 2 },
+      { group: 'Adultos', time: '18:30 - 20:00', spotsLeft: 3 },
+    ],
+  },
+  {
+    id: 'noche',
+    timeOfDay: 'Noche',
+    icon: 'dark_mode',
+    slots: [
+      { group: 'Adultos', time: '20:00 - 21:30', spotsLeft: 4 },
+    ],
+  },
+  {
+    id: 'sabados',
+    timeOfDay: 'Sábados',
+    icon: 'calendar_month',
+    slots: [
+      { group: 'Infantil', time: '10:30 - 11:30' },
+      { group: 'Adultos', time: '11:30 - 13:00', spotsLeft: 2 },
+    ],
+  },
+]
+---
+
+<section class="py-24 bg-white" id="horarios">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-4 block">
+        Flexibilidad horaria
+      </span>
+      <h2 class="font-h-display text-5xl text-ink uppercase tracking-tight">
+        Horarios Disponibles
+      </h2>
+      <p class="text-muted max-w-lg mx-auto text-lg mt-4">
+        Clases de Lunes a Sábado en el Honbu Dojo. Reserva tu cupo hoy mismo.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
+      {schedules.map((schedule) => (
+        <ScheduleCard schedule={schedule} />
+      ))}
+    </div>
+  </div>
+</section>

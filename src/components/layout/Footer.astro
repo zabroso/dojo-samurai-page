@@ -1,0 +1,105 @@
+---
+import { WHATSAPP_BASE, CONTACT_EMAIL, INSTAGRAM_URL, INSTAGRAM_HANDLE, HONBU_ADDRESS } from '../../config'
+---
+
+<footer class="bg-surface border-t border-border" id="contacto">
+  <div class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+
+      <div class="col-span-1 md:col-span-2">
+        <p class="font-h-display text-2xl text-ink mb-4 tracking-tighter">SAMURAI JKA CHILE</p>
+        <p class="text-muted text-sm max-w-xs leading-relaxed mb-6">
+          Promoviendo el Karate-Do tradicional de la Japan Karate Association en Viña del Mar.
+          Formación integral desde 1976.
+        </p>
+        <div class="flex gap-3">
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            class="w-10 h-10 border border-border rounded-lg flex items-center justify-center text-muted hover:text-jka-red hover:border-jka-red jka-transition"
+            aria-label="Instagram"
+          >
+            <span class="material-symbols-outlined text-lg">photo_camera</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="font-bold text-xs uppercase tracking-widest text-ink mb-4">Contacto</p>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a
+              href={`${WHATSAPP_BASE}?text=Hola%2C+tengo+una+consulta`}
+              target="_blank"
+              rel="noreferrer"
+              class="text-muted hover:text-jka-red jka-transition flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-base">chat</span>
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              class="text-muted hover:text-jka-red jka-transition flex items-center gap-2"
+            >
+              <span class="material-symbols-outlined text-base">mail</span>
+              {CONTACT_EMAIL}
+            </a>
+          </li>
+          <li class="text-muted flex items-start gap-2">
+            <span class="material-symbols-outlined text-base mt-0.5">location_on</span>
+            <span>{HONBU_ADDRESS}</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="font-bold text-xs uppercase tracking-widest text-ink mb-4">Institución</p>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a
+              href="https://www.jkachile.com/"
+              target="_blank"
+              rel="noreferrer"
+              class="text-muted hover:text-jka-red jka-transition"
+            >
+              JKA Chile
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.jka.or.jp/en/"
+              target="_blank"
+              rel="noreferrer"
+              class="text-muted hover:text-jka-red jka-transition"
+            >
+              Japan Karate Association
+            </a>
+          </li>
+          <li>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noreferrer"
+              class="text-muted hover:text-jka-red jka-transition"
+            >
+              {INSTAGRAM_HANDLE}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-muted">
+        © {new Date().getFullYear()} Samurai JKA Chile. Todos los derechos reservados.
+      </p>
+      <p class="text-xs text-muted">
+        Karate Shotokan JKA · Viña del Mar · Chile
+      </p>
+    </div>
+  </div>
+</footer>

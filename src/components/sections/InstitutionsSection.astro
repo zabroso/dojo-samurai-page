@@ -1,0 +1,138 @@
+---
+import SchoolsCarousel from '../ui/SchoolsCarousel.tsx'
+import { mockSchoolsResponse } from '../../data/mock'
+import type { InstitutionalTestimonial } from '../../types/index'
+
+const institutionalTestimonials: InstitutionalTestimonial[] = [
+  {
+    id: '1',
+    quote: 'Implementar JKA en nuestro colegio no solo mejoró la disciplina en el aula, sino que fortaleció el vínculo entre los estudiantes. Es formación valórica pura.',
+    author: 'Prof. Roberto Lagos',
+    role: 'Coordinador ACLE · Colegio Saint Dominic',
+    icon: 'school',
+  },
+  {
+    id: '2',
+    quote: 'Trabajamos el karate como un eje de desarrollo social. Hemos visto una reducción significativa en conflictos escolares en los grupos que practican.',
+    author: 'Clara Martínez',
+    role: 'Psicopedagoga Institucional',
+    icon: 'psychology',
+  },
+]
+---
+
+<section class="py-24 bg-white" id="instituciones">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+      <span class="text-jka-red font-extrabold text-xs uppercase tracking-[0.2em] mb-4 block">
+        Compromiso Social e Institucional
+      </span>
+      <h2 class="font-h-display text-5xl md:text-6xl text-ink uppercase mb-6 tracking-tight">
+        Impacto en Instituciones
+      </h2>
+      <p class="text-muted max-w-3xl mx-auto text-lg leading-relaxed">
+        Trabajamos con colegios y comunidades formando disciplina, respeto e inclusión real
+        a través del Karate-Do.
+      </p>
+    </div>
+
+    <!-- Karate Inclusivo -->
+    <div class="mb-24 bg-jka-red/5 border-2 border-jka-red/10 rounded-3xl p-8 md:p-16 relative overflow-hidden group">
+      <div class="absolute -top-10 -right-10 opacity-5 group-hover:rotate-12 transition-transform duration-700">
+        <span class="material-symbols-outlined text-[200px] text-jka-red">diversity_1</span>
+      </div>
+
+      <div class="relative z-10 flex flex-col lg:flex-row gap-12 items-center">
+        <div class="lg:w-2/3">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-jka-red text-white p-3 rounded-2xl shadow-lg">
+              <span class="material-symbols-outlined text-3xl">accessibility_new</span>
+            </div>
+            <h3 class="font-h-display text-4xl md:text-5xl text-ink uppercase">
+              Karate como herramienta de inclusión
+            </h3>
+          </div>
+          <p class="text-xl text-ink/80 leading-relaxed font-medium mb-8">
+            En Samurai JKA Chile creemos que el Karate-Do es para todos. Contamos con
+            programas especializados que integran a niños y jóvenes con
+            <strong class="text-jka-red">Síndrome de Down</strong> y
+            <strong class="text-jka-red">otras condiciones</strong>, enfocándonos en su
+            desarrollo social, emocional y personal.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-jka-red/10 shadow-sm">
+              <span class="material-symbols-outlined text-jka-red">favorite</span>
+              <span class="text-sm font-bold uppercase tracking-wider text-neutral-700">
+                Progreso Emocional
+              </span>
+            </div>
+            <div class="flex items-center gap-3 bg-white p-4 rounded-xl border border-jka-red/10 shadow-sm">
+              <span class="material-symbols-outlined text-jka-red">group_add</span>
+              <span class="text-sm font-bold uppercase tracking-wider text-neutral-700">
+                Integración Social
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:w-1/3 w-full">
+          <div class="bg-white p-8 rounded-2xl shadow-xl border border-border relative">
+            <div class="absolute -top-4 -right-4 bg-jka-red text-white text-[10px] font-black px-4 py-2 rounded-full uppercase tracking-widest">
+              Testimonio
+            </div>
+            <p class="text-ink italic leading-relaxed mb-6">
+              "El cambio en la motricidad y la seguridad de mi hijo ha sido asombroso.
+              No es solo ejercicio, es sentirse parte de una familia que lo respeta y lo desafía."
+            </p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-neutral-100 rounded-full flex items-center justify-center border border-border">
+                <span class="material-symbols-outlined text-muted">person</span>
+              </div>
+              <div>
+                <p class="text-sm font-black text-ink uppercase">Apoderada</p>
+                <p class="text-[10px] text-muted font-bold uppercase tracking-widest">
+                  Programa Karate Inclusivo
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonios institucionales + logos -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+      <div class="space-y-8">
+        <h4 class="font-h-display text-3xl uppercase text-ink tracking-tight border-l-4 border-jka-red pl-4">
+          Voces Institucionales
+        </h4>
+        {institutionalTestimonials.map((t) => (
+          <div class="bg-surface p-8 rounded-2xl border border-border/50 relative">
+            <span class="material-symbols-outlined absolute top-6 right-6 text-jka-red/10 text-5xl">
+              {t.icon}
+            </span>
+            <p class="text-lg text-ink/80 italic mb-6">"{t.quote}"</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-neutral-200 rounded-full flex items-center justify-center">
+                <span class="material-symbols-outlined text-muted">person_4</span>
+              </div>
+              <div>
+                <p class="text-sm font-black text-ink">{t.author}</p>
+                <p class="text-[10px] text-muted font-bold uppercase tracking-widest">{t.role}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <span class="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-10 block text-center">
+          Instituciones que confían en nosotros
+        </span>
+        <SchoolsCarousel client:load initialData={mockSchoolsResponse} />
+      </div>
+    </div>
+
+  </div>
+</section>

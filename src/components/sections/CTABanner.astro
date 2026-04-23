@@ -1,0 +1,42 @@
+---
+import { WHATSAPP_BASE } from '../../config'
+
+const href = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero mi clase gratis')}`
+---
+
+<section class="py-28 bg-jka-red text-white text-center relative overflow-hidden">
+  <div class="max-w-4xl mx-auto px-6 relative z-10">
+    <h2 class="font-h-display text-6xl md:text-8xl mb-8 leading-[0.9] uppercase tracking-tight">
+      Agenda tu primera clase gratis hoy
+    </h2>
+    <p class="text-2xl mb-12 opacity-90 font-bold tracking-tight">
+      Cupos limitados en Honbu Dojo, Viña del Mar.
+    </p>
+
+    <div class="flex flex-col items-center gap-6">
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        class="inline-block bg-white text-jka-red px-16 py-6 rounded-full font-black text-xl uppercase tracking-widest hover:scale-105 active:scale-95 jka-transition shadow-2xl animate-pulse-soft"
+      >
+        ¡Quiero mi clase gratis!
+      </a>
+
+      <div class="flex flex-wrap justify-center gap-8 text-xs font-bold uppercase tracking-[0.2em] opacity-80">
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">verified</span>
+          Sin compromiso
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">bolt</span>
+          Respuesta en minutos
+        </span>
+        <span class="flex items-center gap-2">
+          <span class="material-symbols-outlined text-sm">workspace_premium</span>
+          Afiliados JKA
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
