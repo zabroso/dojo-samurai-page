@@ -3,7 +3,7 @@ import 'piccolore';
 /* empty css                                 */
 import 'clsx';
 import { jsxs, jsx } from 'react/jsx-runtime';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 export { renderers } from '../renderers.mjs';
 
 const WHATSAPP_NUMBER = "56982610309";
@@ -19,9 +19,9 @@ const $$WhatsAppButton = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<a${addAttribute(href, "href")} target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg hover:scale-110 jka-transition"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-7 h-7" aria-hidden="true"> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path> <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.116 1.523 5.849L0 24l6.335-1.496A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.807 9.807 0 0 1-5.001-1.366l-.358-.214-3.762.888.948-3.667-.234-.376A9.817 9.817 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182S21.818 6.57 21.818 12 17.43 21.818 12 21.818z"></path> </svg> </a>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/layout/WhatsAppButton.astro", void 0);
 
-const $$Astro$4 = createAstro();
+const $$Astro$5 = createAstro();
 const $$BaseLayout = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$5, $$props, $$slots);
   Astro2.self = $$BaseLayout;
   const {
     title = "Dojo Samurai JKA Chile | Karate Shotokan Tradicional desde 1976",
@@ -84,9 +84,9 @@ HONBU DOJO<br>VIÑA DEL MAR
 </p> <p class="text-white/70 text-xs mt-1 uppercase tracking-widest">Desde 1976</p> </div> </div> </div> </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/HeroSection.astro", void 0);
 
-const $$Astro$3 = createAstro();
+const $$Astro$4 = createAstro();
 const $$BenefitCard = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$4, $$props, $$slots);
   Astro2.self = $$BenefitCard;
   const { icon, title, description } = Astro2.props;
   return renderTemplate`${maybeRenderHead()}<div class="p-8 bg-surface rounded-2xl hover:shadow-xl jka-transition group border border-transparent hover:border-jka-red/10"> <div class="w-20 h-20 bg-jka-red text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 jka-transition"> <span class="material-symbols-outlined text-5xl">${icon}</span> </div> <h3 class="font-bold text-ink mb-4 text-xl">${title}</h3> <p class="text-sm text-muted leading-relaxed">${description}</p> </div>`;
@@ -128,9 +128,9 @@ No es solo deporte. Es un camino de vida basado en el respeto y la disciplina t�
 </p> </div> <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"> ${benefits.map((benefit) => renderTemplate`${renderComponent($$result, "BenefitCard", $$BenefitCard, { "icon": benefit.icon, "title": benefit.title, "description": benefit.description })}`)} </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/BenefitsSection.astro", void 0);
 
-const $$Astro$2 = createAstro();
+const $$Astro$3 = createAstro();
 const $$ProgramCard = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$ProgramCard;
   const { program } = Astro2.props;
   const { ageRange, label, name, features, imageUrl, whatsappMessage, featured } = program;
@@ -183,7 +183,7 @@ const $$ProgramsSection = createComponent(($$result, $$props, $$slots) => {
         "Condici\xF3n f\xEDsica ideal",
         "Defensa personal real"
       ],
-      imageUrl: "/images/programs/juvenil.jpg",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCucCf6ucpqk5kkNHPBPJ6c2BnKQaUojANqkCs2gR5Llfkffn80fddVdn4Sgv2ROjh-KPy87bJUUHK3jPkOhzOSHXwZcfnhKFtloKYzNNKD-j9RcCdDWwVkhNpvjEV2I-DpurIBnqI4ucta78SwAwCCB3ik77I8vbl7K2KfhNCZrm5RNvlCWqlwTczgos1SAxZTqFdXnQp6Obk4VBnQ5R6G4BxsAKMkwdHJVfOhy5Jl4p4r9wvSjCovdCzRpt3veXsWSzmCoglgZ7No",
       whatsappMessage: "Hola, quiero informaci\xF3n sobre el programa de Karate Juvenil"
     },
     {
@@ -196,7 +196,7 @@ const $$ProgramsSection = createComponent(($$result, $$props, $$slots) => {
         "Eliminaci\xF3n de estr\xE9s",
         "Entrenamiento funcional"
       ],
-      imageUrl: "/images/programs/adultos.jpg",
+      imageUrl: "/images/programs/adulto.jpg",
       whatsappMessage: "Hola, quiero informaci\xF3n sobre el programa de Karate para Adultos",
       featured: true
     }
@@ -210,9 +210,9 @@ Primera clase gratis en Honbu Dojo
 </span> </div> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-10 items-center"> ${programs.map((program) => renderTemplate`${renderComponent($$result, "ProgramCard", $$ProgramCard, { "program": program })}`)} </div> </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/ProgramsSection.astro", void 0);
 
-const $$Astro$1 = createAstro();
+const $$Astro$2 = createAstro();
 const $$ScheduleCard = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$ScheduleCard;
   const { schedule } = Astro2.props;
   const { timeOfDay, icon, featured, slots } = schedule;
@@ -353,7 +353,7 @@ const mockNewsResponse = {
       title: "Examen de grado marzo 2026",
       description: "Alumnos de todos los niveles rindieron sus exámenes de Kyu en el Honbu Dojo bajo la supervisión de Sensei Puchi.",
       date: "2026-03-15",
-      imageUrl: "/images/placeholder-exam.jpg",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCucCf6ucpqk5kkNHPBPJ6c2BnKQaUojANqkCs2gR5Llfkffn80fddVdn4Sgv2ROjh-KPy87bJUUHK3jPkOhzOSHXwZcfnhKFtloKYzNNKD-j9RcCdDWwVkhNpvjEV2I-DpurIBnqI4ucta78SwAwCCB3ik77I8vbl7K2KfhNCZrm5RNvlCWqlwTczgos1SAxZTqFdXnQp6Obk4VBnQ5R6G4BxsAKMkwdHJVfOhy5Jl4p4r9wvSjCovdCzRpt3veXsWSzmCoglgZ7No",
       category: "Exámenes"
     },
     {
@@ -361,7 +361,7 @@ const mockNewsResponse = {
       title: "Seminario con instructor internacional",
       description: "Recibimos la visita de un instructor de nivel internacional en nuestro Honbu Dojo. Una jornada histórica para la escuela.",
       date: "2026-02-20",
-      imageUrl: "/images/placeholder-seminar.jpg",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuCP0qATlynqKkvC8fTYT2qxKmCGSs206UANLjDnR0OgFVqxuhbtXzMAFnoKLJRJvoH5teK_C1wEftvz6-2L8UcMryco_jNgQkXDwxGOzH-FIanvNOmO5IcCrRYsH1ZE3ja8rhtDef0ShYsfN0M0nNjY-Xa6OtgxIq4Q5q00Y4paFr6Sv5uZQI3H2xi2LU12T92L6xk698l9gSnP8EAUzV69BpeWIAuH39jYlsPEDKg-9lqLW__FVBPx2mcK3a7vqDCruDxWFAepOA3D",
       category: "Seminarios"
     },
     {
@@ -369,7 +369,7 @@ const mockNewsResponse = {
       title: "Nuevo curso juvenil introductorio",
       description: "Abrimos inscripciones para el nuevo grupo juvenil desde cero. Jóvenes entre 13 y 17 años, Martes y Jueves 18:00 hrs.",
       date: "2026-02-01",
-      imageUrl: "/images/placeholder-youth.jpg",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBH4LoDRm0v_CBwRif6pIxItGwKnszTyvEyPuSJaM6Tdcm208HQpqF7gAlCo9FTqcmKSmXGzpyEa2ZYwFEXEONLVy7NRoTD6fmI0LF75RjL_DFjLO4nAgpaW2TUutoCS3sMl8dazY0YbC4avBnFTFgDhwOJR0zPKWMgPExCZSRjGwHxcWJqn031hhE95Q6Jrt1UXg12a6G8O6UgZZov_l20QpGAWIs4JYkA35_K-iLo5KtEcV9_XGjzUcjfiVFvnw7RYj7HWsp9u5ED",
       category: "Cursos"
     },
     {
@@ -377,7 +377,7 @@ const mockNewsResponse = {
       title: "Karate inclusivo en Colegio Renacer",
       description: "Expandimos nuestro programa de karate inclusivo al Colegio Renacer bajo la coordinación de Ivette Mancilla.",
       date: "2026-01-10",
-      imageUrl: "/images/placeholder-inclusive.jpg",
+      imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA6iFpYEZMV5QhfTHmVSGEWZJNxXDCIGV-J4w2UnavwSQ3FhOBkaVHwXSFTNksRgW2UFK9y5oRgzFgW3XWslhDtaQWJIRJICxAU7OKuFIbaKPZn2st63pFsGAqu5hVAVSds0R1vB0oxyKVO0jTCAgItniZyDivH1Rdv-wLF9L1mEmt1PL6nQHLdvF7iufFHfCGwQg9OZ3qom06M5CwYU2e8pvIWKM6YQlSJar28tvXVBBSbDHWJcS3zALV7vVe-UA5ay_4wUk-bdvgW",
       category: "Inclusión"
     }
   ],
@@ -388,13 +388,12 @@ const mockSchoolsResponse = {
   data: [
     { id: "1", name: "Colegio Saint Dominic", logoUrl: "/images/schools/saint-dominic.png", city: "Viña del Mar" },
     { id: "2", name: "Scuola Italiana Valparaíso", logoUrl: "/images/schools/scuola-italiana-vpo.png", city: "Valparaíso" },
-    { id: "3", name: "Scuola Italiana Viña del Mar", logoUrl: "/images/schools/scuola-italiana-vdm.png", city: "Viña del Mar" },
-    { id: "4", name: "Colegio Blanca Vergara", logoUrl: "/images/schools/blanca-vergara.png", city: "Viña del Mar" },
-    { id: "5", name: "Colegio San Ignacio", logoUrl: "/images/schools/san-ignacio.png", city: "Viña del Mar" },
-    { id: "6", name: "Escuela Villa Independencia", logoUrl: "/images/schools/villa-independencia.png", city: "Viña del Mar" },
-    { id: "7", name: "Colegio Renacer", logoUrl: "/images/schools/renacer.png", city: "Viña del Mar" }
+    { id: "3", name: "Colegio Blanca Vergara", logoUrl: "/images/schools/blanca-vergara.png", city: "Viña del Mar" },
+    { id: "4", name: "Colegio San Ignacio", logoUrl: "/images/schools/san-ignacio.png", city: "Viña del Mar" },
+    { id: "5", name: "Escuela Villa Independencia", logoUrl: "/images/schools/villa-independencia.png", city: "Viña del Mar" },
+    { id: "6", name: "Corporación Renacer", logoUrl: "/images/schools/renacer.png", city: "Viña del Mar" }
   ],
-  total: 7,
+  total: 6,
   page: 1
 };
 
@@ -408,9 +407,9 @@ Exámenes, seminarios, nuevos cursos y vida de la comunidad Samurai JKA.
 </p> </div> ${renderComponent($$result, "NewsCarousel", NewsCarousel, { "client:load": true, "initialData": mockNewsResponse, "client:component-hydration": "load", "client:component-path": "/Users/zabroso/proyectos/dojo-samurai-page/src/components/ui/NewsCarousel.tsx", "client:component-export": "default" })} </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/NewsSection.astro", void 0);
 
-const $$Astro = createAstro();
+const $$Astro$1 = createAstro();
 const $$TestimonialCard = createComponent(($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$TestimonialCard;
   const { testimonial } = Astro2.props;
   const { quote, author, role, avatarUrl } = testimonial;
@@ -428,21 +427,21 @@ const $$TestimonialsSection = createComponent(($$result, $$props, $$slots) => {
       quote: "Mi hijo ha ganado una confianza incre\xEDble. Los instructores tienen una paciencia y t\xE9cnica de primer nivel.",
       author: "Carolina Mendez",
       role: "Apoderada \xB7 Programa Infantil",
-      avatarUrl: "/images/testimonials/carolina.jpg"
+      avatarUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAsR45PBQP-y1eQB__h148w48_95eSOsrFzuBFvn3jOoKFHIDzApw8JlDmCVqDElFnXw0UTpyEOdj-trX8Tv90VrjwBEhxyGvE-HeNXQ8fGWuTW1sMVGSUtMCIJ8X1O_DHv-PvLTqKeQOyaatZpsQwJWdg1-vYM-ZMqcwPR-wbdvwj-UrE0GhBbqzPgSQeGlaVohXUn6KIkRdSbhPyozYByGgZGL8-eog_175NqBS2zCfuFbiWnx5Jygfy_fiS6dX7y5uT-7wLnZbiA"
     },
     {
       id: "2",
       quote: "Buscaba una actividad para desestresarme y encontr\xE9 un dojo con una m\xEDstica \xFAnica. El nivel t\xE9cnico es alt\xEDsimo.",
       author: "Rodrigo Palma",
       role: "Alumno Adulto \xB7 42 a\xF1os",
-      avatarUrl: "/images/testimonials/rodrigo.jpg"
+      avatarUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuA0kclH46wN_e8Sr86h_OIkt7t2Zrx8pWsZSeaSS8blNXYnZTZjhVyo6OkfBH4M-xfNF2NFbKWPXP_-PaiwXvXh9ywytKa4VSNp0CljSGmdhz8KaoJnG4bAk6arbt-nLu397Qe2b82LKKDehBzGsgYyKr5_XvobQPapyr_3xUSpr6YKLsRo7liij461NjU6d2SKFWtu9eoHfwqaGSHfqN5eZ6FBg3gpXm0y3LpnUZiVqsw0CtlOHNl8wgb9fZJYEDo-sqmgaPlM1_Eq"
     },
     {
       id: "3",
       quote: "Entrenar JKA es distinto a todo. Se nota la trayectoria y el v\xEDnculo directo con la tradici\xF3n de Jap\xF3n.",
       author: "Daniela Fuentes",
       role: "Cintur\xF3n Marr\xF3n \xB7 7 a\xF1os practicando",
-      avatarUrl: "/images/testimonials/daniela.jpg"
+      avatarUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuBSskccB2K4OfN4nDhI5oZ7JzwMqCMHp89o-LF6f3jWmglJFyYeHDud7lv8wVdB_WX3MO_X5tRjoc_1nRk5IQ4b7FGwGlGj1LhtSv_7GmwZ0jzzflVSgJ6UgVq0c_mlddtWemMeEHUQ_wk-vUWuaXcZr7QUoMo1e7BySr3CLf-uRPvxAm1cR6ghXlrzjI65S8EH8SBb0o1ncWvWTPUXg-k3ktyLNH_LgyMRl_C2qOTk4GCCtHXGtG-VQM6PxI1G86VAMw16dW5XuZme"
     }
   ];
   return renderTemplate`${maybeRenderHead()}<section class="py-24 bg-surface"> <div class="max-w-7xl mx-auto px-6"> <div class="text-center mb-16"> <span class="text-jka-red font-bold text-xs uppercase tracking-widest block mb-4">
@@ -452,79 +451,15 @@ Impacto en Nuestra Comunidad
 </h2> <div class="flex items-center justify-center gap-2"> <div class="flex text-yellow-400"> ${Array.from({ length: 5 }).map(() => renderTemplate`<span class="material-symbols-outlined text-xl">star</span>`)} </div> <span class="font-black text-ink">4.9/5 en Google</span> </div> </div> <div class="grid grid-cols-1 md:grid-cols-3 gap-10"> ${testimonials.map((testimonial) => renderTemplate`${renderComponent($$result, "TestimonialCard", $$TestimonialCard, { "testimonial": testimonial })}`)} </div> </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/TestimonialsSection.astro", void 0);
 
-function SchoolsCarousel({ initialData }) {
+const $$Astro = createAstro();
+const $$SchoolsCarousel = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$SchoolsCarousel;
+  const { initialData } = Astro2.props;
   const schools = initialData.data;
-  const trackRef = useRef(null);
-  const scroll = (direction) => {
-    if (!trackRef.current) return;
-    const amount = 200;
-    trackRef.current.scrollBy({
-      left: direction === "left" ? -amount : amount,
-      behavior: "smooth"
-    });
-  };
-  return /* @__PURE__ */ jsxs("div", { className: "relative", children: [
-    /* @__PURE__ */ jsx(
-      "div",
-      {
-        ref: trackRef,
-        className: "flex items-center gap-12 overflow-x-auto scrollbar-hide py-4 px-2",
-        style: { scrollbarWidth: "none" },
-        children: schools.map((school) => /* @__PURE__ */ jsx(
-          "div",
-          {
-            className: "flex-shrink-0 flex flex-col items-center gap-3 group",
-            title: school.name,
-            children: /* @__PURE__ */ jsxs("div", { className: "h-12 w-32 flex items-center justify-center opacity-50 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-300", children: [
-              /* @__PURE__ */ jsx(
-                "img",
-                {
-                  src: school.logoUrl,
-                  alt: school.name,
-                  className: "max-h-full max-w-full object-contain",
-                  loading: "lazy",
-                  onError: (e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                    const fallback = target.nextElementSibling;
-                    if (fallback) fallback.style.display = "flex";
-                  }
-                }
-              ),
-              /* @__PURE__ */ jsx(
-                "div",
-                {
-                  className: "hidden w-full h-full items-center justify-center bg-surface rounded border border-border",
-                  "aria-hidden": "true",
-                  children: /* @__PURE__ */ jsx("span", { className: "text-[10px] text-muted font-bold text-center px-2 leading-tight", children: school.name })
-                }
-              )
-            ] })
-          },
-          school.id
-        ))
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: () => scroll("left"),
-        "aria-label": "Anterior",
-        className: "absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-9 h-9 bg-white border border-border rounded-full flex items-center justify-center shadow-sm hover:border-jka-red hover:text-jka-red transition-colors",
-        children: /* @__PURE__ */ jsx("span", { className: "material-symbols-outlined text-base", children: "chevron_left" })
-      }
-    ),
-    /* @__PURE__ */ jsx(
-      "button",
-      {
-        onClick: () => scroll("right"),
-        "aria-label": "Siguiente",
-        className: "absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-9 h-9 bg-white border border-border rounded-full flex items-center justify-center shadow-sm hover:border-jka-red hover:text-jka-red transition-colors",
-        children: /* @__PURE__ */ jsx("span", { className: "material-symbols-outlined text-base", children: "chevron_right" })
-      }
-    )
-  ] });
-}
+  const loop = [...schools, ...schools];
+  return renderTemplate`${maybeRenderHead()}<div class="schools-carousel overflow-hidden w-full py-4" data-astro-cid-fyu5b3be> <div class="track flex gap-8 w-max" data-astro-cid-fyu5b3be> ${loop.map((school, i) => renderTemplate`<div class="card flex-shrink-0 flex flex-col items-center gap-4 bg-white border border-border rounded-xl shadow-sm p-6 w-44" style="min-height:180px"${addAttribute(i >= schools.length ? "true" : void 0, "aria-hidden")} data-astro-cid-fyu5b3be> <div class="flex items-center justify-center flex-1 w-full" style="min-height:120px" data-astro-cid-fyu5b3be> <img${addAttribute(school.logoUrl, "src")}${addAttribute(`Logo de ${school.name}`, "alt")} class="max-w-full object-contain" style="max-height:120px" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" data-astro-cid-fyu5b3be> <div class="hidden w-full h-full items-center justify-center bg-surface rounded-lg border border-border" style="min-height:120px" aria-hidden="true" data-astro-cid-fyu5b3be> <span class="text-xs font-bold font-body text-muted text-center px-2 leading-snug uppercase" data-astro-cid-fyu5b3be> ${school.name} </span> </div> </div> <span class="text-xs font-bold font-body text-ink text-center uppercase tracking-wide leading-tight" data-astro-cid-fyu5b3be> ${school.name} </span> </div>`)} </div> </div> `;
+}, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/ui/SchoolsCarousel.astro", void 0);
 
 const $$InstitutionsSection = createComponent(($$result, $$props, $$slots) => {
   const institutionalTestimonials = [
@@ -573,7 +508,7 @@ Programa Karate Inclusivo
 Voces Institucionales
 </h4> ${institutionalTestimonials.map((t) => renderTemplate`<div class="bg-surface p-8 rounded-2xl border border-border/50 relative"> <span class="material-symbols-outlined absolute top-6 right-6 text-jka-red/10 text-5xl"> ${t.icon} </span> <p class="text-lg text-ink/80 italic mb-6">"${t.quote}"</p> <div class="flex items-center gap-4"> <div class="w-12 h-12 bg-neutral-200 rounded-full flex items-center justify-center"> <span class="material-symbols-outlined text-muted">person_4</span> </div> <div> <p class="text-sm font-black text-ink">${t.author}</p> <p class="text-[10px] text-muted font-bold uppercase tracking-widest">${t.role}</p> </div> </div> </div>`)} </div> <div class="flex flex-col justify-center"> <span class="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-10 block text-center">
 Instituciones que confían en nosotros
-</span> ${renderComponent($$result, "SchoolsCarousel", SchoolsCarousel, { "client:load": true, "initialData": mockSchoolsResponse, "client:component-hydration": "load", "client:component-path": "/Users/zabroso/proyectos/dojo-samurai-page/src/components/ui/SchoolsCarousel.tsx", "client:component-export": "default" })} </div> </div> </div> </section>`;
+</span> ${renderComponent($$result, "SchoolsCarousel", $$SchoolsCarousel, { "initialData": mockSchoolsResponse })} </div> </div> </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/InstitutionsSection.astro", void 0);
 
 const $$LocationSection = createComponent(($$result, $$props, $$slots) => {
