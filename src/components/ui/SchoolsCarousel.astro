@@ -1,0 +1,62 @@
+---
+import type { ApiResponse, School } from '../../types/index'
+
+interface Props {
+  initialData: ApiResponse<School>
+}
+
+const { initialData } = Astro.props
+const schools = initialData.data
+// Duplicamos la lista para el loop infinito sin salto
+const loop = [...schools, ...schools]
+---
+
+<div class="schools-carousel overflow-hidden w-full py-4">
+  <div class="track flex gap-8 w-max">
+    {loop.map((school, i) => (
+      <div
+        class="card flex-shrink-0 flex flex-col items-center gap-4 bg-white border border-border rounded-xl shadow-sm p-6 w-44"
+        style="min-height:180px"
+        aria-hidden={i >= schools.length ? 'true' : undefined}
+      >
+        <div class="flex items-center justify-center flex-1 w-full" style="min-height:120px">
+          <img
+            src={school.logoUrl}
+            alt={`Logo de ${school.name}`}
+            class="max-w-full object-contain"
+            style="max-height:120px"
+            loading="lazy"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"
+          />
+          <div
+            class="hidden w-full h-full items-center justify-center bg-surface rounded-lg border border-border"
+            style="min-height:120px"
+            aria-hidden="true"
+          >
+            <span class="text-xs font-bold font-body text-muted text-center px-2 leading-snug uppercase">
+              {school.name}
+            </span>
+          </div>
+        </div>
+        <span class="text-xs font-bold font-body text-ink text-center uppercase tracking-wide leading-tight">
+          {school.name}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .track {
+    animation: scroll-loop 18s linear infinite;
+  }
+
+  .schools-carousel:hover .track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll-loop {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>

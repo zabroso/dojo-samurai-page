@@ -188,3 +188,31 @@ El sitio debe hablar con claridad a estos segmentos:
 ## Dominio
 
 `dojosamurai.cl` — propiedad de la escuela, disponible para usar en producción.
+
+---
+
+## Imágenes requeridas
+
+Todas van dentro de `public/images/`. Crear las subcarpetas según la ruta.
+
+| Archivo | Ruta completa | Qué es |
+|---|---|---|
+| `hero.jpg` | `public/images/hero.jpg` | Imagen de fondo del Hero (sección principal) |
+| `sensei-puchi.jpg` | `public/images/sensei-puchi.jpg` | Foto del sensei, aparece a la derecha en el Hero |
+| `infantil.jpg` | `public/images/programs/infantil.jpg` | Foto tarjeta programa infantil |
+| `juvenil.jpg` | `public/images/programs/juvenil.jpg` | Foto tarjeta programa juvenil |
+| `adultos.jpg` | `public/images/programs/adultos.jpg` | Foto tarjeta programa adultos |
+| `saint-dominic.png` | `public/images/schools/saint-dominic.png` | Logo Colegio Saint Dominic (Viña del Mar) |
+| `scuola-italiana-vpo.png` | `public/images/schools/scuola-italiana-vpo.png` | Logo Scuola Italiana Valparaíso |
+| `scuola-italiana-vdm.png` | `public/images/schools/scuola-italiana-vdm.png` | Logo Scuola Italiana Viña del Mar |
+| `blanca-vergara.png` | `public/images/schools/blanca-vergara.png` | Logo Colegio Blanca Vergara (Viña del Mar) |
+| `san-ignacio.png` | `public/images/schools/san-ignacio.png` | Logo Colegio San Ignacio (Viña del Mar) |
+| `villa-independencia.png` | `public/images/schools/villa-independencia.png` | Logo Escuela Villa Independencia (Viña del Mar) |
+| `renacer.png` | `public/images/schools/renacer.png` | Logo Colegio Renacer (Viña del Mar) |
+| `carolina.jpg` | `public/images/testimonials/carolina.jpg` | Avatar testimonial Carolina |
+| `rodrigo.jpg` | `public/images/testimonials/rodrigo.jpg` | Avatar testimonial Rodrigo |
+| `daniela.jpg` | `public/images/testimonials/daniela.jpg` | Avatar testimonial Daniela |
+| `placeholder-exam.jpg` | `public/images/placeholder-exam.jpg` | Foto noticia examen (mock, reemplazar con real) |
+| `placeholder-seminar.jpg` | `public/images/placeholder-seminar.jpg` | Foto noticia seminario (mock, reemplazar con real) |
+| `placeholder-youth.jpg` | `public/images/placeholder-youth.jpg` | Foto noticia juvenil (mock, reemplazar con real) |
+| `placeholder-inclusive.jpg` | `public/images/placeholder-inclusive.jpg` | Foto noticia karate inclusivo (mock, reemplazar con real) |

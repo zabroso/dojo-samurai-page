@@ -1,5 +1,5 @@
 ---
-import SchoolsCarousel from '../ui/SchoolsCarousel.tsx'
+import SchoolsCarousel from '../ui/SchoolsCarousel.astro'
 import { mockSchoolsResponse } from '../../data/mock'
 import type { InstitutionalTestimonial } from '../../types/index'
 
@@ -130,7 +130,7 @@ const institutionalTestimonials: InstitutionalTestimonial[] = [
         <span class="text-xs uppercase tracking-widest text-neutral-500 font-bold mb-10 block text-center">
           Instituciones que confían en nosotros
         </span>
-        <SchoolsCarousel client:load initialData={mockSchoolsResponse} />
+        <SchoolsCarousel initialData={mockSchoolsResponse} />
       </div>
     </div>
 
