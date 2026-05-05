@@ -1,6 +1,7 @@
 ---
 import ProgramCard from '../ui/ProgramCard.astro'
 import type { Program } from '../../types/index'
+import { img } from '../../config'
 
 const programs: Program[] = [
   {
@@ -13,7 +14,7 @@ const programs: Program[] = [
       'Disciplina y enfoque',
       'Respeto y valores',
     ],
-    imageUrl: '/images/programs/infantil.jpg',
+    imageUrl: img('/images/programs/infantil.jpg'),
     whatsappMessage: 'Hola, quiero información sobre el programa de Karate Infantil',
   },
   {
@@ -39,7 +40,7 @@ const programs: Program[] = [
       'Eliminación de estrés',
       'Entrenamiento funcional',
     ],
-    imageUrl: '/images/programs/adulto.jpg',
+    imageUrl: img('/images/programs/adulto.jpg'),
     whatsappMessage: 'Hola, quiero información sobre el programa de Karate para Adultos',
     featured: true,
   },

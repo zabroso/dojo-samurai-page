@@ -3,6 +3,7 @@
 // que use ApiResponse<T> como tipo de retorno — las props de los islands no cambian.
 
 import type { ApiResponse, NewsItem, School } from '../types/index'
+import { img } from '../config'
 
 export const mockNewsResponse: ApiResponse<NewsItem> = {
   data: [
@@ -45,12 +46,12 @@ export const mockNewsResponse: ApiResponse<NewsItem> = {
 
 export const mockSchoolsResponse: ApiResponse<School> = {
   data: [
-    { id: '1', name: 'Colegio Saint Dominic', logoUrl: '/images/schools/saint-dominic.png', city: 'Viña del Mar' },
-    { id: '2', name: 'Scuola Italiana Valparaíso', logoUrl: '/images/schools/scuola-italiana-vpo.png', city: 'Valparaíso' },
-    { id: '3', name: 'Colegio Blanca Vergara', logoUrl: '/images/schools/blanca-vergara.png', city: 'Viña del Mar' },
-    { id: '4', name: 'Colegio San Ignacio', logoUrl: '/images/schools/san-ignacio.png', city: 'Viña del Mar' },
-    { id: '5', name: 'Escuela Villa Independencia', logoUrl: '/images/schools/villa-independencia.png', city: 'Viña del Mar' },
-    { id: '6', name: 'Corporación Renacer', logoUrl: '/images/schools/renacer.png', city: 'Viña del Mar' },
+    { id: '1', name: 'Colegio Saint Dominic', logoUrl: img('/images/schools/saint-dominic.png'), city: 'Viña del Mar' },
+    { id: '2', name: 'Scuola Italiana Valparaíso', logoUrl: img('/images/schools/scuola-italiana-vpo.png'), city: 'Valparaíso' },
+    { id: '3', name: 'Colegio Blanca Vergara', logoUrl: img('/images/schools/blanca-vergara.png'), city: 'Viña del Mar' },
+    { id: '4', name: 'Colegio San Ignacio', logoUrl: img('/images/schools/san-ignacio.png'), city: 'Viña del Mar' },
+    { id: '5', name: 'Escuela Villa Independencia', logoUrl: img('/images/schools/villa-independencia.png'), city: 'Viña del Mar' },
+    { id: '6', name: 'Corporación Renacer', logoUrl: img('/images/schools/renacer.png'), city: 'Viña del Mar' },
   ],
   total: 6,
   page: 1,

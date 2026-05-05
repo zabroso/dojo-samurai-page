@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:prod": "astro build && node scripts/patch-entry.mjs",
     "preview": "astro preview",
     "start": "node ./dist/server/entry.mjs"
   },

@@ -6,6 +6,8 @@ import { jsxs, jsx } from 'react/jsx-runtime';
 import { useState } from 'react';
 export { renderers } from '../renderers.mjs';
 
+const IMAGES_BASE = "";
+const img = (path) => path.startsWith("http") ? path : `${IMAGES_BASE}${path}`;
 const WHATSAPP_NUMBER = "56982610309";
 const WHATSAPP_BASE = `https://wa.me/${WHATSAPP_NUMBER}`;
 const CONTACT_EMAIL = "club.deportivo.samurai@gmail.com";
@@ -64,7 +66,7 @@ Karate Shotokan JKA · Viña del Mar · Chile
 
 const $$HeroSection = createComponent(($$result, $$props, $$slots) => {
   const primaryCta = `${WHATSAPP_BASE}?text=${encodeURIComponent("Hola, quiero agendar mi clase gratis")}`;
-  return renderTemplate`${maybeRenderHead()}<section class="relative min-h-[650px] md:min-h-[800px] flex items-center bg-black overflow-hidden" id="inicio"> <!-- Imagen de fondo --> <div class="absolute inset-0 z-0"> <img src="/images/hero.jpg" alt="Clase grupal de karate en Samurai JKA Chile" class="w-full h-full object-cover opacity-30" loading="eager"> <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div> </div> <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> <!-- Contenido izquierdo --> <div> <div class="flex flex-wrap items-center gap-3 mb-6"> <span class="bg-jka-red text-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm">
+  return renderTemplate`${maybeRenderHead()}<section class="relative min-h-[650px] md:min-h-[800px] flex items-center bg-black overflow-hidden" id="inicio"> <!-- Imagen de fondo --> <div class="absolute inset-0 z-0"> <img${addAttribute(img("/images/hero.jpg"), "src")} alt="Clase grupal de karate en Samurai JKA Chile" class="w-full h-full object-cover opacity-30" loading="eager"> <div class="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div> </div> <div class="relative z-10 max-w-7xl mx-auto px-6 w-full py-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center"> <!-- Contenido izquierdo --> <div> <div class="flex flex-wrap items-center gap-3 mb-6"> <span class="bg-jka-red text-white px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] rounded-sm">
 Tradición JKA Chile
 </span> <span class="flex items-center gap-2 text-white text-[11px] font-bold uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full border border-white/20"> <span class="w-2 h-2 bg-jka-red rounded-full animate-pulse"></span>
 Últimos cupos del mes
@@ -79,7 +81,7 @@ Agenda tu clase gratis
 Respuesta en menos de 5 minutos
 </span> </div> </div> <a href="#horarios" class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-md font-bold text-center jka-transition hover:bg-white/20 text-lg w-full sm:w-auto">
 Ver horarios
-</a> </div> <!-- Stats --> <div class="mt-12 flex flex-wrap items-center gap-10 border-t border-white/10 pt-8"> <div class="flex items-center gap-3"> <span class="material-symbols-outlined text-jka-red text-4xl">verified</span> <div> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">+100</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">Alumnos activos</span> </div> </div> <div> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">1ª Clase</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">Sin costo</span> </div> <div class="hidden sm:block"> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">+50 Años</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">De trayectoria</span> </div> <div class="hidden sm:block"> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">13 Dojos</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">En Chile</span> </div> </div> </div> <!-- Imagen derecha (Sensei) --> <div class="hidden lg:block relative group"> <div class="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-2xl overflow-hidden"> <img src="/images/sensei-puchi.jpg" alt="Shihan Raúl Puchi Zarecht, 6to Dan JKA" class="aspect-[4/5] object-cover w-full rounded group-hover:scale-105 transition-transform duration-700" loading="eager"> <div class="absolute -bottom-2 -left-2 bg-jka-red text-white p-6 rounded shadow-2xl"> <p class="font-h-display text-3xl leading-tight">
+</a> </div> <!-- Stats --> <div class="mt-12 flex flex-wrap items-center gap-10 border-t border-white/10 pt-8"> <div class="flex items-center gap-3"> <span class="material-symbols-outlined text-jka-red text-4xl">verified</span> <div> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">+100</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">Alumnos activos</span> </div> </div> <div> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">1ª Clase</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">Sin costo</span> </div> <div class="hidden sm:block"> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">+50 Años</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">De trayectoria</span> </div> <div class="hidden sm:block"> <span class="text-white font-bold block text-2xl font-h-display tracking-wide">13 Dojos</span> <span class="text-neutral-400 text-[10px] uppercase tracking-[0.2em] font-bold">En Chile</span> </div> </div> </div> <!-- Imagen derecha (Sensei) --> <div class="hidden lg:block relative group"> <div class="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-2xl overflow-hidden"> <img${addAttribute(img("/images/sensei-puchi.jpg"), "src")} alt="Shihan Raúl Puchi Zarecht, 6to Dan JKA" class="aspect-[4/5] object-cover w-full rounded group-hover:scale-105 transition-transform duration-700" loading="eager"> <div class="absolute -bottom-2 -left-2 bg-jka-red text-white p-6 rounded shadow-2xl"> <p class="font-h-display text-3xl leading-tight">
 HONBU DOJO<br>VIÑA DEL MAR
 </p> <p class="text-white/70 text-xs mt-1 uppercase tracking-widest">Desde 1976</p> </div> </div> </div> </div> </section>`;
 }, "/Users/zabroso/proyectos/dojo-samurai-page/src/components/sections/HeroSection.astro", void 0);
@@ -170,7 +172,7 @@ const $$ProgramsSection = createComponent(($$result, $$props, $$slots) => {
         "Disciplina y enfoque",
         "Respeto y valores"
       ],
-      imageUrl: "/images/programs/infantil.jpg",
+      imageUrl: img("/images/programs/infantil.jpg"),
       whatsappMessage: "Hola, quiero informaci\xF3n sobre el programa de Karate Infantil"
     },
     {
@@ -196,7 +198,7 @@ const $$ProgramsSection = createComponent(($$result, $$props, $$slots) => {
         "Eliminaci\xF3n de estr\xE9s",
         "Entrenamiento funcional"
       ],
-      imageUrl: "/images/programs/adulto.jpg",
+      imageUrl: img("/images/programs/adulto.jpg"),
       whatsappMessage: "Hola, quiero informaci\xF3n sobre el programa de Karate para Adultos",
       featured: true
     }
@@ -386,12 +388,12 @@ const mockNewsResponse = {
 };
 const mockSchoolsResponse = {
   data: [
-    { id: "1", name: "Colegio Saint Dominic", logoUrl: "/images/schools/saint-dominic.png", city: "Viña del Mar" },
-    { id: "2", name: "Scuola Italiana Valparaíso", logoUrl: "/images/schools/scuola-italiana-vpo.png", city: "Valparaíso" },
-    { id: "3", name: "Colegio Blanca Vergara", logoUrl: "/images/schools/blanca-vergara.png", city: "Viña del Mar" },
-    { id: "4", name: "Colegio San Ignacio", logoUrl: "/images/schools/san-ignacio.png", city: "Viña del Mar" },
-    { id: "5", name: "Escuela Villa Independencia", logoUrl: "/images/schools/villa-independencia.png", city: "Viña del Mar" },
-    { id: "6", name: "Corporación Renacer", logoUrl: "/images/schools/renacer.png", city: "Viña del Mar" }
+    { id: "1", name: "Colegio Saint Dominic", logoUrl: img("/images/schools/saint-dominic.png"), city: "Viña del Mar" },
+    { id: "2", name: "Scuola Italiana Valparaíso", logoUrl: img("/images/schools/scuola-italiana-vpo.png"), city: "Valparaíso" },
+    { id: "3", name: "Colegio Blanca Vergara", logoUrl: img("/images/schools/blanca-vergara.png"), city: "Viña del Mar" },
+    { id: "4", name: "Colegio San Ignacio", logoUrl: img("/images/schools/san-ignacio.png"), city: "Viña del Mar" },
+    { id: "5", name: "Escuela Villa Independencia", logoUrl: img("/images/schools/villa-independencia.png"), city: "Viña del Mar" },
+    { id: "6", name: "Corporación Renacer", logoUrl: img("/images/schools/renacer.png"), city: "Viña del Mar" }
   ],
   total: 6,
   page: 1

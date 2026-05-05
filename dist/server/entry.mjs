@@ -1,6 +1,6 @@
 import { renderers } from './renderers.mjs';
 import { c as createExports, s as serverEntrypointModule } from './chunks/_@astrojs-ssr-adapter_eUJ9xaPq.mjs';
-import { manifest } from './manifest_BpCUYBoz.mjs';
+import { manifest } from './manifest_C3Lwf5Ld.mjs';
 
 const serverIslandMap = new Map();;
 
@@ -20,7 +20,7 @@ const _manifest = Object.assign(manifest, {
 });
 const _args = {
     "mode": "standalone",
-    "client": "file:///home/mydojoap/dojo_samurai_page/dist/client/",
+    "client": "file:///home/mydojoap/public_html/",
     "server": "file:///home/mydojoap/dojo_samurai_page/dist/server/",
     "host": false,
     "port": 4321,

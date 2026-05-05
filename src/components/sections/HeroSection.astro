@@ -1,5 +1,5 @@
 ---
-import { WHATSAPP_BASE } from '../../config'
+import { WHATSAPP_BASE, img } from '../../config'
 
 const primaryCta = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero agendar mi clase gratis')}`
 ---
@@ -8,7 +8,7 @@ const primaryCta = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero age
   <!-- Imagen de fondo -->
   <div class="absolute inset-0 z-0">
     <img
-      src="/images/hero.jpg"
+      src={img('/images/hero.jpg')}
       alt="Clase grupal de karate en Samurai JKA Chile"
       class="w-full h-full object-cover opacity-30"
       loading="eager"
@@ -92,7 +92,7 @@ const primaryCta = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero age
     <div class="hidden lg:block relative group">
       <div class="relative p-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-2xl overflow-hidden">
         <img
-          src="/images/sensei-puchi.jpg"
+          src={img('/images/sensei-puchi.jpg')}
           alt="Shihan Raúl Puchi Zarecht, 6to Dan JKA"
           class="aspect-[4/5] object-cover w-full rounded group-hover:scale-105 transition-transform duration-700"
           loading="eager"
