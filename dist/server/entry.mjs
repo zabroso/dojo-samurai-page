@@ -20,8 +20,8 @@ const _manifest = Object.assign(manifest, {
 });
 const _args = {
     "mode": "standalone",
-    "client": "file:///home/mydojoap/public_html/",
-    "server": "file:///home/mydojoap/dojo_samurai_page/dist/server/",
+    "client": "file:///Users/zabroso/proyectos/dojo-samurai-page/dist/client/",
+    "server": "file:///Users/zabroso/proyectos/dojo-samurai-page/dist/server/",
     "host": false,
     "port": 4321,
     "assets": "_astro",

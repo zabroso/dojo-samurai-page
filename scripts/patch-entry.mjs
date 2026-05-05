@@ -15,7 +15,7 @@ const root = resolve(__dirname, '..')
 const entryPath = resolve(root, 'dist/server/entry.mjs')
 
 const PROD_BASE = 'file:///home/mydojoap/dojo_samurai_page'
-const PROD_CLIENT = 'file:///home/mydojoap/public_html/'
+const PROD_CLIENT = 'file:///home/mydojoap/public_html/dojosamurai.cl'
 
 // ─── 1. Parchar entry.mjs ────────────────────────────────────────────────────
 
