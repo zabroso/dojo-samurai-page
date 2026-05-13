@@ -40,18 +40,9 @@ export interface Program {
   featured?: boolean
 }
 
-export interface ScheduleSlot {
-  group: string
-  time: string
-  spotsLeft?: number
-}
-
-export interface Schedule {
-  id: string
-  timeOfDay: string
-  icon: string
-  featured?: boolean
-  slots: ScheduleSlot[]
+export interface ScheduleBlock {
+  hora: string
+  slots: Array<string | null>
 }
 
 export interface Testimonial {

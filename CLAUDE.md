@@ -216,3 +216,14 @@ const href = `${WHATSAPP_BASE}?text=${encodeURIComponent('Mensaje aquí')}`
 - Rating de Google en `TestimonialsSection.astro` → verificar el 4.9/5 real
 
 Si encuentras un TODO en el código, no lo resuelvas con datos inventados. Consultarlo primero.
+
+---
+
+## Secciones pendientes de crear
+
+Estas secciones están acordadas pero aún no implementadas.
+**Al iniciar cualquier sesión de trabajo en este proyecto, recordar al usuario que estas secciones están pendientes:**
+
+- [ ] **Mapa de instructores** — mapa visual mostrando la distribución geográfica de los instructores/dojos
+- [ ] **Organigrama de instructores** — jerarquía institucional del dojo (Director → Instructores → Senpai Colaboradores)
+- [ ] **Horario del dojo** — la sección `ScheduleSection.astro` existe pero los datos son placeholder; confirmar horarios reales con el usuario

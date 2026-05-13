@@ -1,65 +1,71 @@
 ---
-import ScheduleCard from '../ui/ScheduleCard.astro'
-import type { Schedule } from '../../types/index'
+import type { ScheduleBlock } from '../../types/index'
 
-// TODO: reemplazar con horarios reales cuando estén disponibles
-const schedules: Schedule[] = [
-  {
-    id: 'manana',
-    timeOfDay: 'Mañana',
-    icon: 'wb_sunny',
-    slots: [
-      { group: 'Adultos', time: '10:00 - 11:30', spotsLeft: 5 },
-    ],
-  },
-  {
-    id: 'tarde',
-    timeOfDay: 'Tarde',
-    icon: 'light_mode',
-    featured: true,
-    slots: [
-      { group: 'Infantil', time: '16:30 - 17:30', spotsLeft: 2 },
-      { group: 'Adultos', time: '18:30 - 20:00', spotsLeft: 3 },
-    ],
-  },
-  {
-    id: 'noche',
-    timeOfDay: 'Noche',
-    icon: 'dark_mode',
-    slots: [
-      { group: 'Adultos', time: '20:00 - 21:30', spotsLeft: 4 },
-    ],
-  },
-  {
-    id: 'sabados',
-    timeOfDay: 'Sábados',
-    icon: 'calendar_month',
-    slots: [
-      { group: 'Infantil', time: '10:30 - 11:30' },
-      { group: 'Adultos', time: '11:30 - 13:00', spotsLeft: 2 },
-    ],
-  },
+const days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado']
+
+// slots[0]=Lunes  slots[1]=Martes  slots[2]=Miércoles  slots[3]=Jueves  slots[4]=Viernes  slots[5]=Sábado
+const blocks: ScheduleBlock[] = [
+  { hora: '08:30', slots: [null,               'Adulto General',      null,               'Adulto General',      null,              null             ] },
+  { hora: '10:30', slots: [null,               null,                  null,               null,                  null,              'Adulto General' ] },
+  { hora: '17:00', slots: ['Infantil Básico',  'Pre Infantil Básico', 'Infantil Básico',  'Pre Infantil Básico', null,              null             ] },
+  { hora: '18:00', slots: [null,               'Juvenil Básico',      null,               'Juvenil Básico',      null,              null             ] },
+  { hora: '19:00', slots: ['Adulto Avanzado',  null,                  'Adulto Avanzado',  null,                  'Adulto Avanzado', null             ] },
+  { hora: '20:00', slots: ['Adulto Intermedio',null,                  'Adulto Intermedio',null,                  null,              null             ] },
+  { hora: '20:15', slots: [null,               'Adulto Básico',       null,               'Adulto Básico',       null,              null             ] },
 ]
+
+const groupColors: Record<string, string> = {
+  'Pre Infantil Básico': 'bg-emerald-50 text-emerald-800',
+  'Infantil Básico':     'bg-sky-50 text-sky-800',
+  'Juvenil Básico':      'bg-violet-50 text-violet-800',
+  'Adulto General':      'bg-amber-50 text-amber-800',
+  'Adulto Básico':       'bg-orange-50 text-orange-800',
+  'Adulto Avanzado':     'bg-red-50 text-red-800',
+  'Adulto Intermedio':   'bg-rose-50 text-rose-800',
+}
 ---
 
-<section class="py-24 bg-white" id="horarios">
+<section class="py-32 bg-white" id="horarios">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-4 block">
-        Flexibilidad horaria
+        Tu rutina
       </span>
-      <h2 class="font-h-display text-5xl text-ink uppercase tracking-tight">
-        Horarios Disponibles
+      <h2 class="font-h-display text-7xl text-ink uppercase tracking-tight">
+        Horarios del Dojo
       </h2>
-      <p class="text-muted max-w-lg mx-auto text-lg mt-4">
-        Clases de Lunes a Sábado en el Honbu Dojo. Reserva tu cupo hoy mismo.
-      </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center">
-      {schedules.map((schedule) => (
-        <ScheduleCard schedule={schedule} />
-      ))}
+    <div class="overflow-x-auto">
+      <table class="w-full border-collapse">
+        <thead>
+          <tr class="bg-surface border-b-2 border-jka-red">
+            <th class="p-5 text-left font-bold uppercase text-sm tracking-widest w-28">Hora</th>
+            {days.map((day) => (
+              <th class="p-5 text-center font-bold uppercase text-sm tracking-widest">{day}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {blocks.map((block) => (
+            <tr class="border-b border-border last:border-0">
+              <td class="p-5 font-bold text-ink text-lg tabular-nums">{block.hora}</td>
+              {block.slots.map((group) => (
+                <td class="p-4 text-center">
+                  {group
+                    ? (
+                      <span class:list={['inline-block w-full font-bold text-sm px-3 py-3 rounded-xl', groupColors[group]]}>
+                        {group}
+                      </span>
+                    )
+                    : <span class="text-muted">—</span>
+                  }
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

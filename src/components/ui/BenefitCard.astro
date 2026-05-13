@@ -8,8 +8,8 @@ interface Props {
 const { icon, title, description } = Astro.props
 ---
 
-<div class="p-8 bg-surface rounded-2xl hover:shadow-xl jka-transition group border border-transparent hover:border-jka-red/10">
-  <div class="w-20 h-20 bg-jka-red text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 jka-transition">
+<div class="p-8 bg-surface rounded-2xl hover:shadow-xl jka-transition group border border-transparent hover:border-jka-red/10 text-center">
+  <div class="w-20 h-20 bg-jka-red text-white rounded-2xl flex items-center justify-center mb-8 shadow-xl group-hover:scale-110 jka-transition mx-auto">
     <span class="material-symbols-outlined text-5xl">{icon}</span>
   </div>
   <h3 class="font-bold text-ink mb-4 text-xl">{title}</h3>

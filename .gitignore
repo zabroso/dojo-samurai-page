@@ -139,6 +139,7 @@ vite.config.ts.timestamp-*
 .vercel
 
 # Archivos de deploy
+dist/
 dist.zip
 deploy-server.zip
 deploy-static.zip

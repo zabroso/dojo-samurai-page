@@ -20,4 +20,4 @@ export const INSTAGRAM_HANDLE = '@karate.samurai.jka'
 export const INSTAGRAM_URL = 'https://www.instagram.com/karate.samurai.jka/'
 
 export const HONBU_ADDRESS = 'Los Baños #55, sector Recreo, Viña del Mar'
-export const HONBU_MAPS_URL = 'https://maps.app.goo.gl/TuLinkAqui' // TODO: reemplazar con URL real
+export const HONBU_MAPS_URL = 'https://maps.app.goo.gl/vWusF8DpsaXDM6ym7'
