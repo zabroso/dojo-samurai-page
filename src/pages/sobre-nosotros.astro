@@ -1,0 +1,172 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import NavBar from '../components/layout/NavBar.astro'
+import Footer from '../components/layout/Footer.astro'
+import MapaDojos from '../components/ui/MapaDojos'
+
+interface Instructor {
+  name: string
+  dan: string
+  role: string
+  initials: string
+}
+
+interface SenpaiColaborador {
+  name: string
+  dan?: string
+  dojo?: string
+  initials: string
+}
+
+const director = {
+  name: 'Raúl Puchi Zarecht',
+  dan: '6to Dan JKA',
+  role: 'Director Técnico · Instructor de cursos avanzados',
+  subtitle: 'Vice Chairman JKA Chile',
+  initials: 'RP',
+}
+
+const instructors: Instructor[] = [
+  { name: 'Mauricio Quijada',     dan: '4to Dan JKA', role: 'Instructor de cursos avanzados y competitivos',             initials: 'MQ' },
+  { name: 'Ivette Mancilla',      dan: '3er Dan JKA', role: 'Instructora de cursos pre-infantiles',                      initials: 'IM' },
+  { name: 'Felipe Muñoz',         dan: '3er Dan JKA', role: 'Instructor de cursos infantiles, juveniles y competitivos', initials: 'FM' },
+  { name: 'Daniel Fuentes',       dan: '3er Dan JKA', role: 'Instructor de cursos adultos introductorio y básico',       initials: 'DF' },
+  { name: 'Jian Carlos Guajardo', dan: '3er Dan JKA', role: 'Instructor de cursos juveniles introductorios',             initials: 'JG' },
+  { name: 'Martín Ampuero',       dan: '3er Dan JKA', role: 'Instructor de cursos infantil intermedio',                  initials: 'MA' },
+  { name: 'Natalia Contreras',    dan: '2do Dan JKA', role: 'Instructora de cursos adultos intermedio',                  initials: 'NC' },
+]
+
+const senpai: SenpaiColaborador[] = [
+  { name: 'Carlos Jiménez', dan: '5to Dan JKA', dojo: 'Dojo Samurai Reñaca',          initials: 'CJ' },
+  { name: 'Juan Carvajal',  dan: '4to Dan JKA', dojo: 'Centro de Estudios La Calera', initials: 'JC' },
+  { name: 'José González',  dan: '4to Dan JKA', dojo: 'Dojo Samurai Quillota',         initials: 'JG' },
+  { name: 'Leonel Sánchez',                      dojo: 'Dojo Nueva Aurora',             initials: 'LS' },
+  { name: 'Patricio Rojo',                                                               initials: 'PR' },
+]
+---
+
+<BaseLayout
+  title="Quiénes Somos | Dojo Samurai JKA Chile"
+  description="Conoce la historia del Dojo Samurai JKA Chile, fundado en 1976 por el Shihan Raúl Puchi Zarecht. Instructores certificados JKA con reconocimiento internacional."
+>
+  <NavBar />
+
+  <main>
+
+    <!-- Hero de página -->
+    <header class="bg-ink pt-8 pb-20">
+      <div class="max-w-7xl mx-auto px-6">
+        <nav class="mb-10 text-xs flex items-center gap-2">
+          <a href="/" class="text-white/50 hover:text-white jka-transition">Inicio</a>
+          <span class="text-white/20">/</span>
+          <span class="text-white/80">Sobre Nosotros</span>
+        </nav>
+        <h1 class="font-h-display text-6xl md:text-8xl text-white uppercase leading-[0.9] tracking-tight mb-6">
+          Quiénes Somos
+        </h1>
+        <p class="text-white/60 text-lg max-w-2xl leading-relaxed">
+          Medio siglo formando karatekas bajo los principios del Karate-Do Shotokan y el respaldo de la Japan Karate Association.
+        </p>
+      </div>
+    </header>
+
+    <!-- Organigrama -->
+    <section class="py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Director -->
+        <div class="mb-24">
+          <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-10 block text-center">
+            Director Técnico
+          </span>
+          <div class="flex justify-center">
+            <div class="bg-white border border-border rounded-xl p-10 text-center w-72 shadow-sm">
+              <div class="w-28 h-28 rounded-full bg-jka-red flex items-center justify-center mx-auto mb-6">
+                <span class="font-h-display text-5xl text-white leading-none">{director.initials}</span>
+              </div>
+              <span class="inline-block bg-jka-red text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-sm mb-5">
+                {director.dan}
+              </span>
+              <h2 class="font-h-display text-3xl text-ink uppercase tracking-tight leading-tight mb-2">
+                {director.name}
+              </h2>
+              <p class="text-ink/70 text-sm mb-2 leading-relaxed">{director.role}</p>
+              <p class="text-muted text-xs uppercase tracking-widest">{director.subtitle}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instructores formales -->
+        <div class="mb-24">
+          <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-2 block">
+            Instructores Formales — Honbu Dojo
+          </span>
+          <div class="w-12 h-px bg-jka-red mb-10"></div>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {instructors.map((instructor) => (
+              <div class="bg-white border border-border rounded-xl p-6 text-center">
+                <div class="w-16 h-16 rounded-lg bg-ink flex items-center justify-center mx-auto mb-4">
+                  <span class="font-h-display text-2xl text-white leading-none">{instructor.initials}</span>
+                </div>
+                <span class="inline-block bg-jka-red/10 text-jka-red text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm mb-3">
+                  {instructor.dan}
+                </span>
+                <h3 class="font-bold text-ink text-sm leading-tight mb-1">{instructor.name}</h3>
+                <p class="text-muted text-xs leading-relaxed">{instructor.role}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Senpai Colaboradores -->
+        <div>
+          <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-2 block">
+            Senpai Colaboradores
+          </span>
+          <div class="w-12 h-px bg-jka-red mb-4"></div>
+          <p class="text-muted text-sm mb-10 max-w-xl leading-relaxed">
+            Practican y enseñan frecuentemente dentro de la academia. Participan activamente en la transmisión técnica del dojo.
+          </p>
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {senpai.map((s) => (
+              <div class="bg-white border border-border rounded-xl p-6 text-center">
+                <div class="w-16 h-16 rounded-lg bg-surface border border-border flex items-center justify-center mx-auto mb-4">
+                  <span class="font-h-display text-2xl text-ink leading-none">{s.initials}</span>
+                </div>
+                {s.dan && (
+                  <span class="inline-block bg-surface text-muted text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-sm mb-3">
+                    {s.dan}
+                  </span>
+                )}
+                <h3 class="font-bold text-ink text-sm leading-tight mb-1">{s.name}</h3>
+                {s.dojo && <p class="text-muted text-xs">{s.dojo}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Mapa de dojos -->
+    <section id="red-dojos">
+      <div class="bg-ink py-20 px-6 text-center">
+        <span class="text-jka-red font-bold text-xs uppercase tracking-widest mb-4 block">
+          Red de Dojos
+        </span>
+        <h2 class="font-h-display text-5xl md:text-6xl text-white uppercase tracking-tight leading-[0.9] mb-4">
+          13 Dojos en Chile
+        </h2>
+        <p class="text-white/60 text-lg max-w-xl mx-auto leading-relaxed">
+          Desde Quillota hasta Puerto Natales, instructores certificados JKA bajo una misma línea técnica.
+        </p>
+      </div>
+      <div class="bg-surface">
+        <MapaDojos client:visible />
+      </div>
+    </section>
+
+  </main>
+
+  <Footer />
+</BaseLayout>

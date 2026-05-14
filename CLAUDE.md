@@ -227,3 +227,4 @@ Estas secciones están acordadas pero aún no implementadas.
 - [ ] **Mapa de instructores** — mapa visual mostrando la distribución geográfica de los instructores/dojos
 - [ ] **Organigrama de instructores** — jerarquía institucional del dojo (Director → Instructores → Senpai Colaboradores)
 - [ ] **Horario del dojo** — la sección `ScheduleSection.astro` existe pero los datos son placeholder; confirmar horarios reales con el usuario
+- [ ] **Bug: mapa** — el mapa en `LocationSection.astro` no funciona correctamente; pendiente de investigar y corregir

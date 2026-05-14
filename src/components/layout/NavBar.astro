@@ -1,19 +1,28 @@
 ---
 import { WHATSAPP_BASE } from '../../config'
 
-const navLinks = [
-  { label: 'Programas', href: '#programas' },
-  { label: 'Horarios', href: '#horarios' },
-  { label: 'Sedes', href: '#sedes' },
-  { label: 'Contacto', href: '#contacto' },
+interface NavLink {
+  label: string
+  href: string
+}
+
+const pathname = Astro.url.pathname
+
+const navLinks: NavLink[] = [
+  { label: 'Inicio',     href: '/' },
+  { label: 'Horarios',      href: '/horarios' },
+  { label: 'Quiénes Somos', href: '/sobre-nosotros' },
 ]
 
-const ctaHref = `${WHATSAPP_BASE}?text=Hola%2C+quiero+agendar+mi+clase+gratis`
+const ctaHref = `${WHATSAPP_BASE}?text=${encodeURIComponent('Hola, quiero agendar mi clase gratis')}`
+
+const isActive = (href: string) =>
+  !href.includes('#') && (pathname === href || pathname === href + '/')
 ---
 
 <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-neutral-100 transition-all duration-300">
   <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-    <a href="#inicio" class="font-h-display text-xl font-black tracking-tighter text-jka-red">
+    <a href="/" class="font-h-display text-xl font-black tracking-tighter text-jka-red">
       SAMURAI JKA CHILE
     </a>
 
@@ -21,7 +30,12 @@ const ctaHref = `${WHATSAPP_BASE}?text=Hola%2C+quiero+agendar+mi+clase+gratis`
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-neutral-600 font-bold hover:text-jka-red jka-transition text-xs uppercase tracking-wider border-b-2 border-transparent hover:border-jka-red py-1"
+          class:list={[
+            'font-bold jka-transition text-xs uppercase tracking-wider border-b-2 py-1',
+            isActive(link.href)
+              ? 'text-jka-red border-jka-red'
+              : 'text-neutral-600 hover:text-jka-red border-transparent hover:border-jka-red',
+          ]}
         >
           {link.label}
         </a>
@@ -35,7 +49,7 @@ const ctaHref = `${WHATSAPP_BASE}?text=Hola%2C+quiero+agendar+mi+clase+gratis`
         rel="noreferrer"
         class="bg-jka-red text-white px-6 py-3 rounded shadow-lg font-bold text-xs uppercase tracking-wider hover:bg-jka-red-dark jka-transition"
       >
-        Contacto
+        Clase gratis
       </a>
 
       <button
@@ -61,7 +75,10 @@ const ctaHref = `${WHATSAPP_BASE}?text=Hola%2C+quiero+agendar+mi+clase+gratis`
       {navLinks.map((link) => (
         <a
           href={link.href}
-          class="text-neutral-600 font-bold hover:text-jka-red jka-transition text-sm uppercase tracking-wider"
+          class:list={[
+            'font-bold jka-transition text-sm uppercase tracking-wider',
+            isActive(link.href) ? 'text-jka-red' : 'text-neutral-600 hover:text-jka-red',
+          ]}
         >
           {link.label}
         </a>

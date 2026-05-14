@@ -216,3 +216,28 @@ Todas van dentro de `public/images/`. Crear las subcarpetas según la ruta.
 | `placeholder-seminar.jpg` | `public/images/placeholder-seminar.jpg` | Foto noticia seminario (mock, reemplazar con real) |
 | `placeholder-youth.jpg` | `public/images/placeholder-youth.jpg` | Foto noticia juvenil (mock, reemplazar con real) |
 | `placeholder-inclusive.jpg` | `public/images/placeholder-inclusive.jpg` | Foto noticia karate inclusivo (mock, reemplazar con real) |
+
+### Fotos de instructores — página `/sobre-nosotros`
+
+Subcarpeta: `public/images/instructors/`
+
+**Especificaciones:**
+- Formato: JPG
+- Dimensiones mínimas: 400 × 500 px (ratio 4:5 — portrait)
+- Estilo: retrato formal, cara centrada, fondo neutro (blanco, gris claro o interior del dojo)
+
+| Archivo | Ruta completa | Instructor |
+|---|---|---|
+| `raul-puchi.jpg` | `public/images/instructors/raul-puchi.jpg` | Shihan Raúl Puchi Zarecht — Director Técnico |
+| `mauricio-quijada.jpg` | `public/images/instructors/mauricio-quijada.jpg` | Mauricio Quijada — 4to Dan |
+| `ivette-mancilla.jpg` | `public/images/instructors/ivette-mancilla.jpg` | Ivette Mancilla — 3er Dan |
+| `felipe-munoz.jpg` | `public/images/instructors/felipe-munoz.jpg` | Felipe Muñoz — 3er Dan |
+| `daniel-fuentes.jpg` | `public/images/instructors/daniel-fuentes.jpg` | Daniel Fuentes — 3er Dan |
+| `jian-carlos-guajardo.jpg` | `public/images/instructors/jian-carlos-guajardo.jpg` | Jian Carlos Guajardo — 3er Dan |
+| `martin-ampuero.jpg` | `public/images/instructors/martin-ampuero.jpg` | Martín Ampuero — 3er Dan |
+| `natalia-contreras.jpg` | `public/images/instructors/natalia-contreras.jpg` | Natalia Contreras — 2do Dan |
+| `carlos-jimenez.jpg` | `public/images/instructors/carlos-jimenez.jpg` | Carlos Jiménez — 5to Dan (Senpai) |
+| `juan-carvajal.jpg` | `public/images/instructors/juan-carvajal.jpg` | Juan Carvajal — 4to Dan (Senpai) |
+| `jose-gonzalez.jpg` | `public/images/instructors/jose-gonzalez.jpg` | José González — 4to Dan (Senpai) |
+| `leonel-sanchez.jpg` | `public/images/instructors/leonel-sanchez.jpg` | Leonel Sánchez (Senpai) |
+| `patricio-rojo.jpg` | `public/images/instructors/patricio-rojo.jpg` | Patricio Rojo (Senpai) |
